@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- kw:head -->
+    <title>Melee Combat Basics | Kenshi Survival Wiki</title>
+    <meta name="description" content="Combat is resolved by stats and positioning — manage Attack, Defence, formation and numbers rather than twitch skill." />
+    <meta name="keywords" content="kenshi, kenshi wiki, kenshi melee combat basics, kenshi survival guides" />
+    <link rel="canonical" href="https://kenshi.gamewikihub.com/guides/melee-combat-basics" />
+    <meta property="og:site_name" content="Kenshi Survival Wiki" />
+    <meta property="og:title" content="Melee Combat Basics | Kenshi Survival Wiki" />
+    <meta property="og:description" content="Combat is resolved by stats and positioning — manage Attack, Defence, formation and numbers rather than twitch skill." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://kenshi.gamewikihub.com/guides/melee-combat-basics" />
+    <meta property="og:image" content="https://kenshi.gamewikihub.com/assets/images/guides/melee-combat-basics.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Melee Combat Basics | Kenshi Survival Wiki" />
+    <meta name="twitter:description" content="Combat is resolved by stats and positioning — manage Attack, Defence, formation and numbers rather than twitch skill." />
+    <meta name="twitter:image" content="https://kenshi.gamewikihub.com/assets/images/guides/melee-combat-basics.jpg" />
+    <!-- /kw:head -->
+    <script type="application/ld+json" id="kw-jsonld">{"@context":"https://schema.org","@type":"Article","headline":"Melee Combat Basics","description":"Combat is resolved by stats and positioning — manage Attack, Defence, formation and numbers rather than twitch skill.","image":"https://kenshi.gamewikihub.com/assets/images/guides/melee-combat-basics.jpg","url":"https://kenshi.gamewikihub.com/guides/melee-combat-basics","datePublished":"2026-05-23","dateModified":"2026-05-23","author":{"@type":"Organization","name":"Kenshi Survival Wiki"},"publisher":{"@type":"Organization","name":"Kenshi Survival Wiki","url":"https://kenshi.gamewikihub.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://kenshi.gamewikihub.com/guides/melee-combat-basics"}}</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2312100e'/%3E%3Ccircle cx='50' cy='50' r='17' fill='%23b89a63'/%3E%3Cg stroke='%238c3b2f' stroke-width='7' stroke-linecap='round'%3E%3Cline x1='50' y1='12' x2='50' y2='26'/%3E%3Cline x1='50' y1='74' x2='50' y2='88'/%3E%3Cline x1='12' y1='50' x2='26' y2='50'/%3E%3Cline x1='74' y1='50' x2='88' y2='50'/%3E%3Cline x1='23' y1='23' x2='33' y2='33'/%3E%3Cline x1='67' y1='67' x2='77' y2='77'/%3E%3Cline x1='77' y1='23' x2='67' y2='33'/%3E%3Cline x1='33' y1='67' x2='23' y2='77'/%3E%3C/g%3E%3C/svg%3E"
+    />
+
+    <!-- ============================================
+     Google AdSense
+     To enable ads: replace ca-pub-XXXXXXXXXXXXXXXX in
+     index.html, app.js and ads.txt with your publisher
+     ID and slot IDs.
+     ============================================ -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1319817671788428"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <header class="site">
+      <a class="logo" href="/">
+        <span class="logo-mark">KW</span>
+        <span class="logo-text"
+          >KENSHI<small>WIKI · unofficial wasteland manual</small></span
+        >
+      </a>
+      <div class="search">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search factions, regions, weapons, guides…"
+          autocomplete="off"
+          aria-label="Search the wiki"
+        />
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      <nav class="top" aria-label="Primary">
+        <a href="/getting-started">Start</a>
+        <a href="/guides">Guides</a>
+        <a href="/factions">Factions</a>
+        <a href="/regions">Regions</a>
+        <a href="/weapons">Weapons</a>
+        <a href="/mods">Mods</a>
+        <a href="/about">About</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        ☰
+      </button>
+    </header>
+
+    <div class="emergency-bar" aria-hidden="true">
+      <span
+        >⚠ THE WASTELAND DOES NOT FORGIVE — TRAVEL ARMED — KEEP YOUR SQUAD FED —
+        CHECK THE REGION BEFORE YOU CROSS IT — RUN WHEN YOU MUST ⚠</span
+      >
+      <span
+        >⚠ THE WASTELAND DOES NOT FORGIVE — TRAVEL ARMED — KEEP YOUR SQUAD FED —
+        CHECK THE REGION BEFORE YOU CROSS IT — RUN WHEN YOU MUST ⚠</span
+      >
+    </div>
+
+    <div class="layout">
+      <aside class="left" id="leftNav">
+      <h3>Start Here</h3>
+      <ul>
+        <li><a href="/" data-r="/">Home</a></li>
+        <li><a href="/getting-started" data-r="/getting-started">Getting Started</a></li>
+        <li><a href="/guides" data-r="/guides">Survival Guides</a></li>
+      </ul>
+      <h3>The World</h3>
+      <ul>
+        <li><a href="/factions" data-r="/factions">Factions</a></li>
+        <li><a href="/regions" data-r="/regions">Regions &amp; Map</a></li>
+        <li><a href="/cities" data-r="/cities">Cities</a></li>
+        <li><a href="/lore" data-r="/lore">Lore</a></li>
+      </ul>
+      <h3>The Squad</h3>
+      <ul>
+        <li><a href="/skills" data-r="/skills">Skills &amp; Stats</a></li>
+        <li><a href="/races" data-r="/races">Races</a></li>
+        <li><a href="/weapons" data-r="/weapons">Weapons</a></li>
+        <li><a href="/armor" data-r="/armor">Armor</a></li>
+        <li><a href="/creatures" data-r="/creatures">Creatures</a></li>
+      </ul>
+      <h3>The Long Game</h3>
+      <ul>
+        <li><a href="/base-building" data-r="/base-building">Base Building</a></li>
+        <li><a href="/mods" data-r="/mods">Mods</a></li>
+        <li><a href="/tips" data-r="/tips">Wanderer's Notes</a></li>
+        <li><a href="/patches" data-r="/patches">Patch Notes</a></li>
+      </ul>
+      <h3>Site Info</h3>
+      <ul>
+        <li><a href="/about" data-r="/about">About</a></li>
+        <li><a href="/privacy-policy" data-r="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/contact" data-r="/contact">Contact</a></li>
+      </ul>
+      
+      <aside class="ad-slot ad-half-page" aria-label="Advertisement">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle"
+          style="display:block;"
+          data-ad-client="ca-pub-1319817671788428"
+          data-ad-slot="6141169453"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      </aside>
+    
+    </aside>
+      <main id="main">
+      
+      <aside class="ad-slot ad-banner" aria-label="Advertisement">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle"
+          style="display:block;width:100%;height:90px;"
+          data-ad-client="ca-pub-1319817671788428"
+          data-ad-slot="6141169453"
+          
+          data-full-width-responsive="true"></ins>
+      </aside>
+    
+      <div class="page article">
+        <div class="breadcrumb"><a href="/guides">Survival Guides</a> / Melee Combat Basics</div>
+        <h1>Melee Combat Basics <span class="tag good">Beginner</span></h1>
+        <figure class="page-hero">
+      <img src="/assets/images/guides/melee-combat-basics.jpg" alt="Melee Combat Basics — Kenshi Survival Guides reference image" width="1200" height="500"
+        onerror="this.closest('.page-hero').classList.add('hero-missing');this.remove();">
+      <span class="hero-fallback" aria-hidden="true">Melee Combat Basics</span>
+    </figure>
+        <p class="lore">Kenshi combat is not about reflexes. It is about who is standing where, and who outnumbers whom.</p>
+        <p>Combat is resolved by stats and positioning — manage Attack, Defence, formation and numbers rather than twitch skill.</p>
+        <h3>How Combat Works</h3><p>Melee combat is resolved automatically through stats — Attack versus Defence, modified by weapons, armour and fatigue. You direct positioning and targets, not individual swings.</p><h3>Positioning &amp; Numbers</h3><p>Being surrounded splits your Defence across attackers and is the main cause of defeat. Fight at chokepoints and concentrate your numbers on isolated enemies.</p><h3>Weapon Choice</h3><p>Match the weapon to the fight: katanas for unarmoured foes, heavy weapons and hackers for armour, polearms for reach, sidearms for indoors.</p><h3>Fatigue &amp; Hunger</h3><p>Tired and hungry characters fight badly. Keep the squad fed and rested before a fight you intend to win.</p>
+        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Toughness is trained by losing. Get downed where guards will save you, then heal and repeat.&rdquo;</p></div>
+        <nav class="related" aria-label="Related pages">
+      <h3>Related Pages</h3>
+      <div class="related-grid">
+        <a class="related-card" href="/skills/attack">Attack</a><a class="related-card" href="/skills/defense">Defence</a><a class="related-card" href="/guides/squad-formation">Squad Formation Guide</a>
+      </div>
+    </nav>
+        <aside class="source-notes" aria-label="Sources and update notes">
+      <div class="src-head">Sources &amp; Update Notes</div>
+      <div class="src-meta">
+        <span><strong>Last updated:</strong> 2026-05-23</span>
+        <span><strong>Game version:</strong> Kenshi 1.0.x — community survival consensus</span>
+      </div>
+      <div class="src-checked"><strong>Sources checked:</strong></div>
+      <ul class="src-list"><li><a href="https://kenshi.fandom.com/wiki/Kenshi_Wiki" target="_blank" rel="noopener noreferrer">Kenshi Wiki (community, Fandom)</a><span> — Cross-referenced for faction, region, item and creature details.</span></li><li><a href="https://steamcommunity.com/app/233860/guides/" target="_blank" rel="noopener noreferrer">Kenshi Steam Community Guides</a><span> — Reference for build strategies and training methods.</span></li></ul>
+      <p class="src-uncertain">Note: Kenshi mechanics, balance and mod behaviour vary by version and load order. Treat exact numbers and requirements as patch-dependent.</p>
+    </aside>
+      </div>
+      
+      <aside class="ad-slot ad-in-article" aria-label="Advertisement">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle"
+          style="display:block;"
+          data-ad-client="ca-pub-1319817671788428"
+          data-ad-slot="6141169453"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      </aside>
+    
+    </main>
+      <aside class="right" id="rightNav">
+      <h3>Most Searched</h3>
+      <ul>
+        <li><a href="/guides/best-base-locations">Best Base Locations</a></li>
+        <li><a href="/guides/surviving-first-week">Beginner Guide</a></li>
+        <li><a href="/factions">Faction Guide</a></li>
+        <li><a href="/guides/toughness-training">Toughness Training</a></li>
+        <li><a href="/guides/best-money-making-methods">Best Money Methods</a></li>
+        <li><a href="/regions">Wasteland Map</a></li>
+        <li><a href="/creatures/beak-things">Beak Things</a></li>
+      </ul>
+      
+      <h3>Wanderer's Note</h3>
+      <p class="qd">&ldquo;Never travel with a single character. A second body can drag the first to safety.&rdquo;</p>
+      <h3>Kenshi 2</h3>
+      <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
+      
+      <aside class="ad-slot ad-rectangle" aria-label="Advertisement">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle"
+          style="display:block;"
+          data-ad-client="ca-pub-1319817671788428"
+          data-ad-slot="6141169453"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      </aside>
+    
+    </aside>
+    </div>
+
+    <footer class="site">
+      <p class="footer-tagline">Survive long enough to matter.</p>
+      <nav class="footer-links" aria-label="External resources">
+        <a
+          href="https://store.steampowered.com/app/233860/Kenshi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Steam</a
+        >
+        <a
+          href="https://www.lofigames.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Lo-Fi Games</a
+        >
+        <a
+          href="https://www.reddit.com/r/Kenshi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Reddit</a
+        >
+        <a href="/patches">Patch Notes</a>
+      </nav>
+      <nav class="footer-links" aria-label="Site information">
+        <a href="/about">About</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <p>
+        Unofficial fan wiki · Kenshi is © Lo-Fi Games · GameWikiHub · &copy;
+        2026. All rights reserved.
+      </p>
+    </footer>
+
+    <script src="/js/data.js"></script>
+    <script src="/js/meta.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

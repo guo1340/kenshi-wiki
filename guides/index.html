@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- kw:head -->
+    <title>Survival Guides | Kenshi Survival Wiki</title>
+    <meta name="description" content="Practical Kenshi survival guides — surviving your first week, escaping slavery, base building, combat, money-making and advanced playthroughs." />
+    <meta name="keywords" content="kenshi, kenshi survival guides" />
+    <link rel="canonical" href="https://kenshi.gamewikihub.com/guides" />
+    <meta property="og:site_name" content="Kenshi Survival Wiki" />
+    <meta property="og:title" content="Survival Guides | Kenshi Survival Wiki" />
+    <meta property="og:description" content="Practical Kenshi survival guides — surviving your first week, escaping slavery, base building, combat, money-making and advanced playthroughs." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kenshi.gamewikihub.com/guides" />
+    <meta property="og:image" content="https://kenshi.gamewikihub.com/assets/images/og/default-og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Survival Guides | Kenshi Survival Wiki" />
+    <meta name="twitter:description" content="Practical Kenshi survival guides — surviving your first week, escaping slavery, base building, combat, money-making and advanced playthroughs." />
+    <meta name="twitter:image" content="https://kenshi.gamewikihub.com/assets/images/og/default-og.jpg" />
+    <!-- /kw:head -->
+    <script type="application/ld+json" id="kw-jsonld">{"@context":"https://schema.org","@type":"CollectionPage","name":"Survival Guides | Kenshi Survival Wiki","description":"Practical Kenshi survival guides — surviving your first week, escaping slavery, base building, combat, money-making and advanced playthroughs.","url":"https://kenshi.gamewikihub.com/guides","isPartOf":{"@type":"WebSite","name":"Kenshi Survival Wiki","url":"https://kenshi.gamewikihub.com"},"publisher":{"@type":"Organization","name":"Kenshi Survival Wiki","url":"https://kenshi.gamewikihub.com"}}</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2312100e'/%3E%3Ccircle cx='50' cy='50' r='17' fill='%23b89a63'/%3E%3Cg stroke='%238c3b2f' stroke-width='7' stroke-linecap='round'%3E%3Cline x1='50' y1='12' x2='50' y2='26'/%3E%3Cline x1='50' y1='74' x2='50' y2='88'/%3E%3Cline x1='12' y1='50' x2='26' y2='50'/%3E%3Cline x1='74' y1='50' x2='88' y2='50'/%3E%3Cline x1='23' y1='23' x2='33' y2='33'/%3E%3Cline x1='67' y1='67' x2='77' y2='77'/%3E%3Cline x1='77' y1='23' x2='67' y2='33'/%3E%3Cline x1='33' y1='67' x2='23' y2='77'/%3E%3C/g%3E%3C/svg%3E"
+    />
+
+    <!-- ============================================
+     Google AdSense
+     To enable ads: replace ca-pub-XXXXXXXXXXXXXXXX in
+     index.html, app.js and ads.txt with your publisher
+     ID and slot IDs.
+     ============================================ -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1319817671788428"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <header class="site">
+      <a class="logo" href="/">
+        <span class="logo-mark">KW</span>
+        <span class="logo-text"
+          >KENSHI<small>WIKI · unofficial wasteland manual</small></span
+        >
+      </a>
+      <div class="search">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search factions, regions, weapons, guides…"
+          autocomplete="off"
+          aria-label="Search the wiki"
+        />
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      <nav class="top" aria-label="Primary">
+        <a href="/getting-started">Start</a>
+        <a href="/guides">Guides</a>
+        <a href="/factions">Factions</a>
+        <a href="/regions">Regions</a>
+        <a href="/weapons">Weapons</a>
+        <a href="/mods">Mods</a>
+        <a href="/about">About</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        ☰
+      </button>
+    </header>
+
+    <div class="emergency-bar" aria-hidden="true">
+      <span
+        >⚠ THE WASTELAND DOES NOT FORGIVE — TRAVEL ARMED — KEEP YOUR SQUAD FED —
+        CHECK THE REGION BEFORE YOU CROSS IT — RUN WHEN YOU MUST ⚠</span
+      >
+      <span
+        >⚠ THE WASTELAND DOES NOT FORGIVE — TRAVEL ARMED — KEEP YOUR SQUAD FED —
+        CHECK THE REGION BEFORE YOU CROSS IT — RUN WHEN YOU MUST ⚠</span
+      >
+    </div>
+
+    <div class="layout">
+      <aside class="left" id="leftNav">
+      <h3>Start Here</h3>
+      <ul>
+        <li><a href="/" data-r="/">Home</a></li>
+        <li><a href="/getting-started" data-r="/getting-started">Getting Started</a></li>
+        <li><a href="/guides" data-r="/guides">Survival Guides</a></li>
+      </ul>
+      <h3>The World</h3>
+      <ul>
+        <li><a href="/factions" data-r="/factions">Factions</a></li>
+        <li><a href="/regions" data-r="/regions">Regions &amp; Map</a></li>
+        <li><a href="/cities" data-r="/cities">Cities</a></li>
+        <li><a href="/lore" data-r="/lore">Lore</a></li>
+      </ul>
+      <h3>The Squad</h3>
+      <ul>
+        <li><a href="/skills" data-r="/skills">Skills &amp; Stats</a></li>
+        <li><a href="/races" data-r="/races">Races</a></li>
+        <li><a href="/weapons" data-r="/weapons">Weapons</a></li>
+        <li><a href="/armor" data-r="/armor">Armor</a></li>
+        <li><a href="/creatures" data-r="/creatures">Creatures</a></li>
+      </ul>
+      <h3>The Long Game</h3>
+      <ul>
+        <li><a href="/base-building" data-r="/base-building">Base Building</a></li>
+        <li><a href="/mods" data-r="/mods">Mods</a></li>
+        <li><a href="/tips" data-r="/tips">Wanderer's Notes</a></li>
+        <li><a href="/patches" data-r="/patches">Patch Notes</a></li>
+      </ul>
+      <h3>Site Info</h3>
+      <ul>
+        <li><a href="/about" data-r="/about">About</a></li>
+        <li><a href="/privacy-policy" data-r="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/contact" data-r="/contact">Contact</a></li>
+      </ul>
+      
+      <aside class="ad-slot ad-half-page" aria-label="Advertisement">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle"
+          style="display:block;"
+          data-ad-client="ca-pub-1319817671788428"
+          data-ad-slot="6141169453"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      </aside>
+    
+    </aside>
+      <main id="main">
+      
+      <aside class="ad-slot ad-banner" aria-label="Advertisement">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle"
+          style="display:block;width:100%;height:90px;"
+          data-ad-client="ca-pub-1319817671788428"
+          data-ad-slot="6141169453"
+          
+          data-full-width-responsive="true"></ins>
+      </aside>
+    
+      <div class="page">
+        <h1>Survival Guides</h1>
+        <div class="breadcrumb">Home / Survival Guides</div>
+        <p>Field manuals written from the perspective of wanderers who have been through it. Start with the beginner guides and work toward the advanced playthroughs.</p>
+        <h3>Survival Guides</h3><div class="cards">
+      <a class="card" href="/guides/surviving-first-week">
+        <h4>Surviving Your First Week <span class="tag good">Beginner</span></h4>
+        <p>Pick a safe town, earn starting cash, recruit a second body, and learn to run before you learn to fight.</p>
+      </a>
+      <a class="card" href="/guides/escaping-slavery">
+        <h4>Escaping Slavery <span class="tag ">Intermediate</span></h4>
+        <p>If you are enslaved, train your stats in captivity, pick your moment, break the collar and run for friendly ground.</p>
+      </a>
+      <a class="card" href="/guides/desert-survival">
+        <h4>Desert Survival <span class="tag good">Beginner</span></h4>
+        <p>Carry food and water, time your crossings, avoid acid-rain regions unprotected, and never march a hungry squad into open sand.</p>
+      </a>
+      <a class="card" href="/guides/anti-bandit-strategies">
+        <h4>Anti-Bandit Strategies <span class="tag good">Beginner</span></h4>
+        <p>Use town guards, fight at chokepoints, never get surrounded, and let numbers — yours or the guards&#39; — do the work.</p>
+      </a>
+      <a class="card" href="/guides/night-travel">
+        <h4>Night Travel Guide <span class="tag ">Intermediate</span></h4>
+        <p>Night travel improves stealth and can avoid patrols, but reduces your sight and raises the risk of walking into predators.</p>
+      </a>
+      <a class="card" href="/guides/injury-recovery">
+        <h4>Injury Recovery Guide <span class="tag good">Beginner</span></h4>
+        <p>Treat wounds fast, get downed characters to safety, manage blood loss, and use beds and medics to recover properly.</p>
+      </a>
+      <a class="card" href="/guides/avoiding-beak-things">
+        <h4>How To Avoid Beak Things <span class="tag ">Intermediate</span></h4>
+        <p>Scout ahead, know which regions they den in, keep Athletics high, and treat any Beak Thing sighting as a signal to leave.</p>
+      </a>
+      <a class="card" href="/guides/avoiding-early-death">
+        <h4>Avoiding Early Death <span class="tag good">Beginner</span></h4>
+        <p>Stay near guards, never travel alone, route around your race&#39;s enemies, and accept that retreat is a win.</p>
+      </a>
+      <a class="card" href="/guides/why-running-away-matters">
+        <h4>Why Running Away Matters <span class="tag good">Beginner</span></h4>
+        <p>Retreat preserves the run, trains Athletics, and turns losing fights into survivable ones. It is a skill, not a shame.</p>
+      </a>
+      <a class="card" href="/guides/best-beginner-starts">
+        <h4>Best Beginner Starts <span class="tag good">Beginner</span></h4>
+        <p>For a first run pick a gentle start — a Greenlander, a couple of squadmates, and a safe region near Squin or the Hub.</p>
+      </a></div><h3>Economy Guides</h3><div class="cards">
+      <a class="card" href="/guides/copper-mining">
+        <h4>Copper Mining <span class="tag good">Beginner</span></h4>
+        <p>Mine copper near a safe town, sell it to local vendors, and use the income to recruit and equip your first squad.</p>
+      </a>
+      <a class="card" href="/guides/smuggling">
+        <h4>Smuggling Guide <span class="tag ">Intermediate</span></h4>
+        <p>Move contraband past faction inspections using stealth, hidden inventory pockets and routes that avoid patrols.</p>
+      </a>
+      <a class="card" href="/guides/trading-routes">
+        <h4>Trading Routes <span class="tag ">Intermediate</span></h4>
+        <p>Buy goods cheap where they are produced, sell dear where they are scarce, and run a steady circuit between towns.</p>
+      </a>
+      <a class="card" href="/guides/hashish-trading">
+        <h4>Hashish Trading <span class="tag ">Intermediate</span></h4>
+        <p>Grow hemp in the swamp, process it into hashish, and sell into grey-market towns — accepting the legal risk for high margins.</p>
+      </a>
+      <a class="card" href="/guides/base-economy">
+        <h4>Base Economy <span class="tag ">Advanced</span></h4>
+        <p>Turn a base into a money engine with farming, mining and production chains that generate goods to sell continuously.</p>
+      </a>
+      <a class="card" href="/guides/robotics-economy">
+        <h4>Robotics Economy <span class="tag ">Advanced</span></h4>
+        <p>Salvage robotics components from Skeletons and ruins, then sell or craft them into high-value goods for serious income.</p>
+      </a>
+      <a class="card" href="/guides/best-money-making-methods">
+        <h4>Best Money Making Methods <span class="tag ">Intermediate</span></h4>
+        <p>From copper mining to bounties, trade routes, base production and Leviathan hunting — match the method to your game stage.</p>
+      </a></div><h3>Combat Guides</h3><div class="cards">
+      <a class="card" href="/guides/melee-combat-basics">
+        <h4>Melee Combat Basics <span class="tag good">Beginner</span></h4>
+        <p>Combat is resolved by stats and positioning — manage Attack, Defence, formation and numbers rather than twitch skill.</p>
+      </a>
+      <a class="card" href="/guides/ranged-combat">
+        <h4>Ranged Combat Guide <span class="tag ">Intermediate</span></h4>
+        <p>Crossbows deal damage before melee, but demand positioning to manage reload time and friendly fire.</p>
+      </a>
+      <a class="card" href="/guides/crossbow-guide">
+        <h4>Crossbow Guide <span class="tag ">Intermediate</span></h4>
+        <p>Choose the right crossbow tier, train Crossbows and Precision Shooting, keep bolts stocked, and manage firing lines.</p>
+      </a>
+      <a class="card" href="/guides/martial-arts-guide">
+        <h4>Martial Arts Guide <span class="tag ">Advanced</span></h4>
+        <p>Build Martial Arts with Dodge and Toughness, keep armour and encumbrance light, and use captivity as natural training.</p>
+      </a>
+      <a class="card" href="/guides/armor-penalties">
+        <h4>Armor Penalties Explained <span class="tag ">Intermediate</span></h4>
+        <p>Heavy armour protects but slows you and cripples stealth, Dodge and Martial Arts — match armour weight to the build.</p>
+      </a>
+      <a class="card" href="/guides/squad-formation">
+        <h4>Squad Formation Guide <span class="tag ">Intermediate</span></h4>
+        <p>Place tanks in front, ranged and support behind, hold chokepoints, and never let the squad get surrounded.</p>
+      </a>
+      <a class="card" href="/guides/training-safely">
+        <h4>Training Safely <span class="tag good">Beginner</span></h4>
+        <p>Use town guards, training dummies, captivity and controlled fights to build stats without losing characters.</p>
+      </a>
+      <a class="card" href="/guides/toughness-training">
+        <h4>Toughness Training <span class="tag ">Intermediate</span></h4>
+        <p>Build Toughness by surviving defeats — get downed in survivable conditions, recover, and repeat until your squad stops dying.</p>
+      </a>
+      <a class="card" href="/guides/heavy-armor-guide">
+        <h4>Heavy Armor Guide <span class="tag ">Intermediate</span></h4>
+        <p>Heavy armour turns a strong character into an immovable front line — wear it on tanks, never on speed builds.</p>
+      </a></div><h3>Base Building Guides</h3><div class="cards">
+      <a class="card" href="/guides/best-base-locations">
+        <h4>Best Base Locations Guide <span class="tag ">Intermediate</span></h4>
+        <p>The best sites balance resources, defensibility and a survivable raid profile — start safe before attempting an ambitious one.</p>
+      </a>
+      <a class="card" href="/guides/defending-against-raids">
+        <h4>Defending Against Raids <span class="tag ">Advanced</span></h4>
+        <p>Combine funnelling walls, well-placed turrets and a trained squad — and keep wealth growth in step with squad strength.</p>
+      </a>
+      <a class="card" href="/guides/endgame-city-building">
+        <h4>Endgame City Building <span class="tag ">Advanced</span></h4>
+        <p>Scale a settled base into a self-sufficient city with full production, strong defences and a large trained population.</p>
+      </a></div><h3>Squad Guides</h3><div class="cards">
+      <a class="card" href="/guides/best-squad-roles">
+        <h4>Best Squad Roles <span class="tag ">Intermediate</span></h4>
+        <p>Build a squad around clear roles — tank, damage, ranged, medic, builder, scout — rather than identical generalists.</p>
+      </a>
+      <a class="card" href="/guides/medic-builds">
+        <h4>Medic Builds <span class="tag ">Intermediate</span></h4>
+        <p>Build a Field Medic with high medical skill, protect them in the back rank, and keep them stocked with supplies.</p>
+      </a>
+      <a class="card" href="/guides/tank-builds">
+        <h4>Tank Builds <span class="tag ">Intermediate</span></h4>
+        <p>Build a tank around high Defence, Toughness and Strength, full heavy armour, and a place at the front of the line.</p>
+      </a>
+      <a class="card" href="/guides/stealth-builds">
+        <h4>Stealth Builds <span class="tag ">Advanced</span></h4>
+        <p>Build around Stealth, Assassination, Lockpicking and light gear — for theft, infiltration and silent takedowns.</p>
+      </a>
+      <a class="card" href="/guides/solo-vs-squad">
+        <h4>Solo Play vs Squad Play <span class="tag ">Intermediate</span></h4>
+        <p>Squad play is safer and more flexible; solo play is harder, more personal, and unforgiving of a single mistake.</p>
+      </a>
+      <a class="card" href="/guides/animal-squad">
+        <h4>Animal Squad Guide <span class="tag ">Intermediate</span></h4>
+        <p>Recruit and raise animals — Bonedogs, garru, even crabs — as combat and pack members of your squad.</p>
+      </a>
+      <a class="card" href="/guides/skeleton-squad">
+        <h4>Skeleton Squad Guide <span class="tag ">Advanced</span></h4>
+        <p>An all-Skeleton squad ignores hunger, acid and harsh environments — ideal for the deadliest regions, but reliant on Robotics.</p>
+      </a></div><h3>Advanced Guides</h3><div class="cards">
+      <a class="card" href="/guides/solo-run">
+        <h4>Solo Kenshi Run <span class="tag ">Expert</span></h4>
+        <p>A single-character run with no rescue net — survive on stealth, retreat and patient stat-building before any real fighting.</p>
+      </a>
+      <a class="card" href="/guides/pacifist-run">
+        <h4>Pacifist Run <span class="tag ">Expert</span></h4>
+        <p>Survive and thrive without killing — through stealth, trade, base building and outrunning every fight.</p>
+      </a>
+      <a class="card" href="/guides/holy-nation-playthrough">
+        <h4>Holy Nation Playthrough <span class="tag ">Intermediate</span></h4>
+        <p>Run a Greenlander squad aligned with the Holy Nation — safe territory, soldier recruits, and war against the Shek.</p>
+      </a>
+      <a class="card" href="/guides/anti-slaver-run">
+        <h4>Anti-Slaver Run <span class="tag ">Advanced</span></h4>
+        <p>Side with the Anti-Slavers — free slaves, raid slave camps, and accept losing the United Cities as the price.</p>
+      </a>
+      <a class="card" href="/guides/cannibal-hunter-run">
+        <h4>Cannibal Hunter Run <span class="tag ">Advanced</span></h4>
+        <p>Base near the Cannibal Plains and wage war on the hordes — brutal Toughness training and a steady bounty income.</p>
+      </a>
+      <a class="card" href="/guides/ironman-challenge">
+        <h4>Ironman Challenge <span class="tag ">Expert</span></h4>
+        <p>Play with no save-scumming — accept every loss, every lost character, and every consequence as final.</p>
+      </a>
+      <a class="card" href="/guides/hardcore-settings">
+        <h4>Hardcore Survival Settings <span class="tag ">Expert</span></h4>
+        <p>Tune game settings — squad limits, permanent death, harsher economy — to build a punishing custom survival experience.</p>
+      </a>
+      <a class="card" href="/guides/reactive-world-mod">
+        <h4>Reactive World Guide <span class="tag ">Intermediate</span></h4>
+        <p>Install and play with the Reactive World mod for a wasteland whose towns and factions visibly respond to your actions.</p>
+      </a></div>
+      </div>
+      
+      <aside class="ad-slot ad-in-article" aria-label="Advertisement">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle"
+          style="display:block;"
+          data-ad-client="ca-pub-1319817671788428"
+          data-ad-slot="6141169453"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      </aside>
+    
+    </main>
+      <aside class="right" id="rightNav">
+      <h3>Most Searched</h3>
+      <ul>
+        <li><a href="/guides/best-base-locations">Best Base Locations</a></li>
+        <li><a href="/guides/surviving-first-week">Beginner Guide</a></li>
+        <li><a href="/factions">Faction Guide</a></li>
+        <li><a href="/guides/toughness-training">Toughness Training</a></li>
+        <li><a href="/guides/best-money-making-methods">Best Money Methods</a></li>
+        <li><a href="/regions">Wasteland Map</a></li>
+        <li><a href="/creatures/beak-things">Beak Things</a></li>
+      </ul>
+      
+      <h3>Wanderer's Note</h3>
+      <p class="qd">&ldquo;Squin is the safest beginner base. If you are lost, go there.&rdquo;</p>
+      <h3>Kenshi 2</h3>
+      <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
+      
+      <aside class="ad-slot ad-rectangle" aria-label="Advertisement">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle"
+          style="display:block;"
+          data-ad-client="ca-pub-1319817671788428"
+          data-ad-slot="6141169453"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      </aside>
+    
+    </aside>
+    </div>
+
+    <footer class="site">
+      <p class="footer-tagline">Survive long enough to matter.</p>
+      <nav class="footer-links" aria-label="External resources">
+        <a
+          href="https://store.steampowered.com/app/233860/Kenshi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Steam</a
+        >
+        <a
+          href="https://www.lofigames.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Lo-Fi Games</a
+        >
+        <a
+          href="https://www.reddit.com/r/Kenshi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Reddit</a
+        >
+        <a href="/patches">Patch Notes</a>
+      </nav>
+      <nav class="footer-links" aria-label="Site information">
+        <a href="/about">About</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <p>
+        Unofficial fan wiki · Kenshi is © Lo-Fi Games · GameWikiHub · &copy;
+        2026. All rights reserved.
+      </p>
+    </footer>
+
+    <script src="/js/data.js"></script>
+    <script src="/js/meta.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
