@@ -3671,5 +3671,3 @@ window.WikiData = {
     }
   }
 };
-  }
-};
