@@ -128,7 +128,7 @@
         <li><a href="/contact" data-r="/contact">Contact</a></li>
       </ul>
       
-      <aside class="ad-slot ad-half-page" aria-label="Advertisement">
+      <div class="ad-slot ad-half-page" role="complementary" aria-label="Advertisement">
         <span class="ad-label">Advertisement</span>
         <ins class="adsbygoogle"
           style="display:block;"
@@ -136,12 +136,12 @@
           data-ad-slot="6141169453"
           data-ad-format="auto"
           data-full-width-responsive="true"></ins>
-      </aside>
+      </div>
     
     </aside>
       <main id="main">
       
-      <aside class="ad-slot ad-banner" aria-label="Advertisement">
+      <div class="ad-slot ad-banner" role="complementary" aria-label="Advertisement">
         <span class="ad-label">Advertisement</span>
         <ins class="adsbygoogle"
           style="display:block;width:100%;height:90px;"
@@ -149,7 +149,7 @@
           data-ad-slot="6141169453"
           
           data-full-width-responsive="true"></ins>
-      </aside>
+      </div>
     
       <div class="page">
         <h1>Skills &amp; Stats</h1>
@@ -161,15 +161,107 @@
             <button data-f="cat" data-v="all">All</button><button data-f="cat" data-v="Combat">Combat</button><button data-f="cat" data-v="Weapon">Weapon</button><button data-f="cat" data-v="Utility">Utility</button>
           </div>
           <input type="text" class="filter-search" placeholder="Filter by name…" data-f="search" value="">
-          <span class="result-count" id="skCount"></span>
+          <span class="result-count" id="skCount">18 of 18</span>
         </div>
-        <table class="data">
-          <thead><tr><th>Skill</th><th>Category</th><th>What It Governs</th></tr></thead>
-          <tbody id="skBody"></tbody>
-        </table>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Skill</th><th>Category</th><th>What It Governs</th></tr></thead>
+            <tbody id="skBody">
+        <tr>
+          <td><a href="/skills/attack" class="row-link">Attack</a></td>
+          <td><span class="tag ">Combat</span></td>
+          <td>Your chance to land a hit and break through an opponent&#39;s defence.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/defense" class="row-link">Defence</a></td>
+          <td><span class="tag ">Combat</span></td>
+          <td>Your chance to block incoming melee attacks.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/toughness" class="row-link">Toughness</a></td>
+          <td><span class="tag ">Combat</span></td>
+          <td>How much punishment you take before going down, and how well you recover.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/martial-arts" class="row-link">Martial Arts</a></td>
+          <td><span class="tag ">Combat</span></td>
+          <td>Unarmed combat effectiveness — strikes, throws and damage with no weapon equipped.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/dodge" class="row-link">Dodge</a></td>
+          <td><span class="tag ">Combat</span></td>
+          <td>Your chance to evade attacks entirely instead of blocking them.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/heavy-weapons" class="row-link">Heavy Weapons</a></td>
+          <td><span class="tag ">Weapon</span></td>
+          <td>Effectiveness with the largest, hardest-hitting weapon class.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/katanas" class="row-link">Katanas</a></td>
+          <td><span class="tag ">Weapon</span></td>
+          <td>Effectiveness with katana-class weapons — fast, sharp cutting blades.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/sabres" class="row-link">Sabres</a></td>
+          <td><span class="tag ">Weapon</span></td>
+          <td>Effectiveness with sabre-class weapons — balanced, versatile cutting blades.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/polearms" class="row-link">Polearms</a></td>
+          <td><span class="tag ">Weapon</span></td>
+          <td>Effectiveness with long-reach polearm weapons.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/hackers" class="row-link">Hackers</a></td>
+          <td><span class="tag ">Weapon</span></td>
+          <td>Effectiveness with hacker-class weapons — heavy cleaving blades built to dismember.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/athletics" class="row-link">Athletics</a></td>
+          <td><span class="tag ">Utility</span></td>
+          <td>Run speed — how fast your character moves across the world.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/strength" class="row-link">Strength</a></td>
+          <td><span class="tag ">Utility</span></td>
+          <td>Carry capacity and the ability to use heavy weapons and armour without penalty.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/stealth" class="row-link">Stealth</a></td>
+          <td><span class="tag ">Utility</span></td>
+          <td>How well you move and act unseen.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/lockpicking" class="row-link">Lockpicking</a></td>
+          <td><span class="tag ">Utility</span></td>
+          <td>Your ability to open locked doors, gates and containers.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/assassination" class="row-link">Assassination</a></td>
+          <td><span class="tag ">Utility</span></td>
+          <td>Knocking out unaware targets instantly with a stealth attack.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/science" class="row-link">Science</a></td>
+          <td><span class="tag ">Utility</span></td>
+          <td>Researching technologies and unlocking better crafting and base options.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/engineering" class="row-link">Engineering</a></td>
+          <td><span class="tag ">Utility</span></td>
+          <td>Constructing and the speed of building base structures.</td>
+        </tr>
+        <tr>
+          <td><a href="/skills/robotics" class="row-link">Robotics</a></td>
+          <td><span class="tag ">Utility</span></td>
+          <td>Repairing Skeletons and crafting and maintaining robotic limbs.</td>
+        </tr></tbody>
+          </table>
+        </div>
       </div>
       
-      <aside class="ad-slot ad-in-article" aria-label="Advertisement">
+      <div class="ad-slot ad-in-article" role="complementary" aria-label="Advertisement">
         <span class="ad-label">Advertisement</span>
         <ins class="adsbygoogle"
           style="display:block;"
@@ -177,7 +269,7 @@
           data-ad-slot="6141169453"
           data-ad-format="auto"
           data-full-width-responsive="true"></ins>
-      </aside>
+      </div>
     
     </main>
       <aside class="right" id="rightNav">
@@ -193,11 +285,11 @@
       </ul>
       
       <h3>Wanderer's Note</h3>
-      <p class="qd">&ldquo;Check your squad’s races against a region before you travel into it.&rdquo;</p>
+      <p class="qd">&ldquo;Buy a Bonedog puppy early and raise it through your squad’s fights.&rdquo;</p>
       <h3>Kenshi 2</h3>
       <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
       
-      <aside class="ad-slot ad-rectangle" aria-label="Advertisement">
+      <div class="ad-slot ad-rectangle" role="complementary" aria-label="Advertisement">
         <span class="ad-label">Advertisement</span>
         <ins class="adsbygoogle"
           style="display:block;"
@@ -205,7 +297,7 @@
           data-ad-slot="6141169453"
           data-ad-format="auto"
           data-full-width-responsive="true"></ins>
-      </aside>
+      </div>
     
     </aside>
     </div>

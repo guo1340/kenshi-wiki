@@ -29,7 +29,10 @@
   };
 
   /* sections that carry a hero image */
-  const HERO_SECTIONS = ['guides', 'regions', 'cities', 'factions', 'creatures', 'lore'];
+  const HERO_SECTIONS = [
+    'guides', 'regions', 'cities', 'factions', 'creatures', 'lore',
+    'skills', 'weapons', 'armor', 'races', 'base-building', 'mods'
+  ];
 
   const LIST_DESC = {
     guides: 'Practical Kenshi survival guides — surviving your first week, escaping slavery, base building, combat, money-making and advanced playthroughs.',

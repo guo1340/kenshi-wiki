@@ -46,12 +46,16 @@ global.localStorage = { getItem: function () { return null; }, setItem: function
 global.history = { pushState: function () {} };
 let CURRENT = '/';
 global.location = { get pathname() { return CURRENT; }, origin: 'https://kenshi.gamewikihub.com' };
-global.window = { addEventListener: function () {}, scrollTo: function () {}, adsbygoogle: [] };
+global.window = { addEventListener: function () {}, scrollTo: function () {}, adsbygoogle: [], __KW_PRERENDER__: true };
 global.URL = URL;
 global.setTimeout = function () {};
 
-require('./js/data.js');
-global.window.WikiData = window.WikiData;
+[
+  'core', 'guides', 'factions', 'regions', 'cities', 'skills', 'weapons',
+  'armor', 'races', 'baseBuilding', 'mods', 'lore', 'creatures', 'search-index'
+].forEach(function (chunk) {
+  require('./js/data/' + chunk + '.js');
+});
 require('./js/meta.js');
 global.window.WikiMeta = window.WikiMeta;
 const D = window.WikiData;
@@ -112,10 +116,10 @@ function buildPage(template, route) {
     jsonLdBlock(route));
   html = html.replace(/<aside class="left" id="leftNav">[\s\S]*?<main id="main">/,
     '<aside class="left" id="leftNav">' + r.leftNav + '</aside>\n      <main id="main">');
-  html = html.replace(/<aside class="right" id="rightNav">[\s\S]*?<\/div>/,
-    '<aside class="right" id="rightNav">' + r.rightNav + '</aside>\n    </div>');
   html = html.replace(/<main id="main">[\s\S]*?<\/main>/,
     '<main id="main">' + r.main + '</main>');
+  html = html.replace(/<aside class="right" id="rightNav">[\s\S]*?<\/aside>\s*(?:<\/aside>\s*)*<\/div>\s*<footer/,
+    '<aside class="right" id="rightNav">' + r.rightNav + '</aside>\n    </div>\n\n    <footer');
   return html;
 }
 

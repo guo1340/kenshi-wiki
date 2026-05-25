@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- kw:head -->
+    <title>Kenshi Wiki — Wasteland Survival Manual</title>
+    <meta name="description" content="A practical Kenshi survival wiki — factions, regions, cities, skills, weapons, armor, races, base building, mods, lore and long-term strategy for the wasteland." />
+    <meta name="keywords" content="kenshi wiki, kenshi guide, kenshi factions, kenshi map, kenshi survival" />
+    <link rel="canonical" href="https://kenshi.gamewikihub.com/" />
+    <meta property="og:site_name" content="Kenshi Survival Wiki" />
+    <meta property="og:title" content="Kenshi Wiki — Wasteland Survival Manual" />
+    <meta property="og:description" content="A practical Kenshi survival wiki — factions, regions, cities, skills, weapons, armor, races, base building, mods, lore and long-term strategy for the wasteland." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kenshi.gamewikihub.com/" />
+    <meta property="og:image" content="https://kenshi.gamewikihub.com/assets/images/hero/homepage-hero.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kenshi Wiki — Wasteland Survival Manual" />
+    <meta name="twitter:description" content="A practical Kenshi survival wiki — factions, regions, cities, skills, weapons, armor, races, base building, mods, lore and long-term strategy for the wasteland." />
+    <meta name="twitter:image" content="https://kenshi.gamewikihub.com/assets/images/hero/homepage-hero.jpg" />
+    <!-- /kw:head -->
+    <script type="application/ld+json" id="kw-jsonld">{"@context":"https://schema.org","@type":"WebSite","name":"Kenshi Survival Wiki","url":"https://kenshi.gamewikihub.com","description":"A practical Kenshi survival wiki — factions, regions, cities, skills, weapons, armor, races, base building, mods, lore and long-term strategy for the wasteland.","publisher":{"@type":"Organization","name":"Kenshi Survival Wiki","url":"https://kenshi.gamewikihub.com"},"potentialAction":{"@type":"SearchAction","target":"https://kenshi.gamewikihub.com/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2312100e'/%3E%3Ccircle cx='50' cy='50' r='17' fill='%23b89a63'/%3E%3Cg stroke='%238c3b2f' stroke-width='7' stroke-linecap='round'%3E%3Cline x1='50' y1='12' x2='50' y2='26'/%3E%3Cline x1='50' y1='74' x2='50' y2='88'/%3E%3Cline x1='12' y1='50' x2='26' y2='50'/%3E%3Cline x1='74' y1='50' x2='88' y2='50'/%3E%3Cline x1='23' y1='23' x2='33' y2='33'/%3E%3Cline x1='67' y1='67' x2='77' y2='77'/%3E%3Cline x1='77' y1='23' x2='67' y2='33'/%3E%3Cline x1='33' y1='67' x2='23' y2='77'/%3E%3C/g%3E%3C/svg%3E"
+    />
+
+    <!-- ============================================
+     Google AdSense
+     To enable ads: replace ca-pub-XXXXXXXXXXXXXXXX in
+     index.html, app.js and ads.txt with your publisher
+     ID and slot IDs.
+     ============================================ -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1319817671788428"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <header class="site">
+      <a class="logo" href="/">
+        <span class="logo-mark">KW</span>
+        <span class="logo-text"
+          >KENSHI<small>WIKI · unofficial wasteland manual</small></span
+        >
+      </a>
+      <div class="search">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search factions, regions, weapons, guides…"
+          autocomplete="off"
+          aria-label="Search the wiki"
+        />
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      <nav class="top" aria-label="Primary">
+        <a href="/getting-started">Start</a>
+        <a href="/guides">Guides</a>
+        <a href="/factions">Factions</a>
+        <a href="/regions">Regions</a>
+        <a href="/weapons">Weapons</a>
+        <a href="/mods">Mods</a>
+        <a href="/about">About</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        ☰
+      </button>
+    </header>
+
+    <div class="emergency-bar" aria-hidden="true">
+      <span
+        >⚠ THE WASTELAND DOES NOT FORGIVE — TRAVEL ARMED — KEEP YOUR SQUAD FED —
+        CHECK THE REGION BEFORE YOU CROSS IT — RUN WHEN YOU MUST ⚠</span
+      >
+      <span
+        >⚠ THE WASTELAND DOES NOT FORGIVE — TRAVEL ARMED — KEEP YOUR SQUAD FED —
+        CHECK THE REGION BEFORE YOU CROSS IT — RUN WHEN YOU MUST ⚠</span
+      >
+    </div>
+
+    <div class="layout">
+      <aside class="left" id="leftNav">
+      <h3>Start Here</h3>
+      <ul>
+        <li><a href="/" data-r="/">Home</a></li>
+        <li><a href="/getting-started" data-r="/getting-started">Getting Started</a></li>
+        <li><a href="/guides" data-r="/guides">Survival Guides</a></li>
+      </ul>
+      <h3>The World</h3>
+      <ul>
+        <li><a href="/factions" data-r="/factions">Factions</a></li>
+        <li><a href="/regions" data-r="/regions">Regions &amp; Map</a></li>
+        <li><a href="/cities" data-r="/cities">Cities</a></li>
+        <li><a href="/lore" data-r="/lore">Lore</a></li>
+      </ul>
+      <h3>The Squad</h3>
+      <ul>
+        <li><a href="/skills" data-r="/skills">Skills &amp; Stats</a></li>
+        <li><a href="/races" data-r="/races">Races</a></li>
+        <li><a href="/weapons" data-r="/weapons">Weapons</a></li>
+        <li><a href="/armor" data-r="/armor">Armor</a></li>
+        <li><a href="/creatures" data-r="/creatures">Creatures</a></li>
+      </ul>
+      <h3>The Long Game</h3>
+      <ul>
+        <li><a href="/base-building" data-r="/base-building">Base Building</a></li>
+        <li><a href="/mods" data-r="/mods">Mods</a></li>
+        <li><a href="/tips" data-r="/tips">Wanderer's Notes</a></li>
+        <li><a href="/patches" data-r="/patches">Patch Notes</a></li>
+      </ul>
+      <h3>Site Info</h3>
+      <ul>
+        <li><a href="/about" data-r="/about">About</a></li>
+        <li><a href="/privacy-policy" data-r="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/contact" data-r="/contact">Contact</a></li>
+      </ul>
+      
+      <div class="ad-slot ad-half-page" role="complementary" aria-label="Advertisement">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle"
+          style="display:block;"
+          data-ad-client="ca-pub-1319817671788428"
+          data-ad-slot="6141169453"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      </div>
+    
+    </aside>
+      <main id="main">
+      <div class="hero">
+        <img class="hero-bg" src="/assets/images/hero/homepage-hero.jpg" alt="Kenshi wasteland gameplay scene" loading="eager">
+        <div class="hero-fog"></div>
+        <div class="hero-inner">
+          <span class="hero-kicker">Wasteland Survival Manual</span>
+          <h1>Kenshi Wiki</h1>
+          <p class="hero-quote">&ldquo;Survive the wasteland. Lose limbs. Become stronger.&rdquo;</p>
+          <p class="hero-sub">Kenshi is not about becoming the chosen hero. It is about surviving long enough to matter.</p>
+          <div class="hero-buttons">
+            <a class="btn" href="/getting-started">Start Here</a>
+            <a class="btn" href="/guides/surviving-first-week">Beginner Guide</a>
+            <a class="btn" href="/guides/best-beginner-starts">Best Starting Locations</a>
+            <a class="btn" href="/factions">Faction Guide</a>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="ad-slot ad-banner" role="complementary" aria-label="Advertisement">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle"
+          style="display:block;width:100%;height:90px;"
+          data-ad-client="ca-pub-1319817671788428"
+          data-ad-slot="6141169453"
+          
+          data-full-width-responsive="true"></ins>
+      </div>
+    
+
+      <h2 class="section-head">Field Categories</h2>
+      <div class="cards cat-cards">
+        
+          <a class="card cat-card" href="/getting-started">
+            <div class="ico flame"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M50 10 C58 30 74 38 70 60 C68 78 56 88 50 88 C44 88 30 80 30 60 C30 46 40 44 42 52 C44 38 44 24 50 10 Z" fill="currentColor"/></svg></div>
+            <h4>Getting Started</h4>
+          </a>
+          <a class="card cat-card" href="/guides">
+            <div class="ico biohazard"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="50" r="10" fill="currentColor"/><path d="M50 12 Q40 30 50 40 Q60 30 50 12 Z" fill="currentColor"/><path d="M18 70 Q38 64 44 53 Q31 50 18 70 Z" fill="currentColor"/><path d="M82 70 Q62 64 56 53 Q69 50 82 70 Z" fill="currentColor"/><circle cx="50" cy="50" r="22" fill="none" stroke="currentColor" stroke-width="3"/></svg></div>
+            <h4>Survival Guides</h4>
+          </a>
+          <a class="card cat-card" href="/factions">
+            <div class="ico banner"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M30 14 L70 14 L70 78 L50 66 L30 78 Z" fill="currentColor"/><rect x="38" y="28" width="24" height="6" fill="rgba(0,0,0,0.4)"/></svg></div>
+            <h4>Factions</h4>
+          </a>
+          <a class="card cat-card" href="/regions">
+            <div class="ico map"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18 26 L40 18 L62 26 L84 18 L84 74 L62 82 L40 74 L18 82 Z" fill="currentColor"/><line x1="40" y1="18" x2="40" y2="74" stroke="rgba(0,0,0,0.4)" stroke-width="3"/><line x1="62" y1="26" x2="62" y2="82" stroke="rgba(0,0,0,0.4)" stroke-width="3"/></svg></div>
+            <h4>Regions &amp; Map</h4>
+          </a>
+          <a class="card cat-card" href="/cities">
+            <div class="ico city"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 84 L16 50 L34 38 L34 84 Z" fill="currentColor"/><path d="M40 84 L40 28 L62 16 L62 84 Z" fill="currentColor"/><path d="M68 84 L68 46 L86 56 L86 84 Z" fill="currentColor"/><rect x="46" y="36" width="10" height="12" fill="rgba(0,0,0,0.4)"/></svg></div>
+            <h4>Cities</h4>
+          </a>
+          <a class="card cat-card" href="/skills">
+            <div class="ico stat"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="18" y="56" width="16" height="28" fill="currentColor"/><rect x="42" y="38" width="16" height="46" fill="currentColor"/><rect x="66" y="22" width="16" height="62" fill="currentColor"/></svg></div>
+            <h4>Skills &amp; Stats</h4>
+          </a>
+          <a class="card cat-card" href="/weapons">
+            <div class="ico sword"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M70 14 L78 22 L40 60 L32 60 L32 52 Z" fill="currentColor"/><rect x="22" y="62" width="22" height="8" rx="2" fill="currentColor" transform="rotate(45 33 66)"/><rect x="20" y="70" width="12" height="18" rx="3" fill="currentColor"/></svg></div>
+            <h4>Weapons</h4>
+          </a>
+          <a class="card cat-card" href="/armor">
+            <div class="ico shield"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M50 12 L82 24 L82 50 C82 72 66 84 50 90 C34 84 18 72 18 50 L18 24 Z" fill="currentColor"/><path d="M50 28 L66 34 L66 50 C66 62 58 70 50 74 Z" fill="rgba(0,0,0,0.35)"/></svg></div>
+            <h4>Armor</h4>
+          </a>
+          <a class="card cat-card" href="/races">
+            <div class="ico race"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="32" r="16" fill="currentColor"/><path d="M24 86 C24 62 38 52 50 52 C62 52 76 62 76 86 Z" fill="currentColor"/></svg></div>
+            <h4>Races</h4>
+          </a>
+          <a class="card cat-card" href="/base-building">
+            <div class="ico home"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M50 16 L86 46 L78 46 L78 84 L22 84 L22 46 L14 46 Z" fill="currentColor"/><rect x="42" y="58" width="16" height="26" fill="rgba(0,0,0,0.4)"/></svg></div>
+            <h4>Base Building</h4>
+          </a>
+          <a class="card cat-card" href="/creatures">
+            <div class="ico claw"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 16 C30 40 34 60 38 84 L46 84 C44 58 42 38 40 16 Z" fill="currentColor"/><path d="M46 14 C48 40 50 62 52 86 L60 86 C58 60 56 38 54 14 Z" fill="currentColor"/><path d="M66 16 C66 40 64 62 62 84 L70 84 C74 58 76 38 78 16 Z" fill="currentColor"/></svg></div>
+            <h4>Creatures</h4>
+          </a>
+          <a class="card cat-card" href="/mods">
+            <div class="ico gear"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M50 20 L58 28 L70 26 L74 38 L86 44 L82 56 L88 66 L78 74 L78 86 L66 86 L58 94 L46 88 L34 90 L30 78 L18 72 L24 60 L18 50 L28 42 L30 30 L42 30 Z" fill="currentColor"/><circle cx="52" cy="56" r="13" fill="rgba(0,0,0,0.4)"/></svg></div>
+            <h4>Mods</h4>
+          </a>
+          <a class="card cat-card" href="/lore">
+            <div class="ico book"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="22" y="18" width="56" height="64" rx="3" fill="currentColor"/><line x1="32" y1="34" x2="68" y2="34" stroke="rgba(0,0,0,0.4)" stroke-width="3"/><line x1="32" y1="46" x2="68" y2="46" stroke="rgba(0,0,0,0.4)" stroke-width="3"/><line x1="32" y1="58" x2="56" y2="58" stroke="rgba(0,0,0,0.4)" stroke-width="3"/></svg></div>
+            <h4>Lore</h4>
+          </a>
+      </div>
+
+      <h2 class="section-head">Featured Field Guides</h2>
+      <div class="cards">
+        
+          <a class="card" href="/guides/best-beginner-starts">
+            <h4>Best Beginner Starts</h4>
+            <p>Pick a start that teaches the game instead of punishing you.</p>
+          </a>
+          <a class="card" href="/factions">
+            <h4>Faction Tier List</h4>
+            <p>Who to befriend, who to avoid, and who will enslave you.</p>
+          </a>
+          <a class="card" href="/guides/best-base-locations">
+            <h4>Best Base Locations</h4>
+            <p>Where to settle so the location is not a slow defeat.</p>
+          </a>
+          <a class="card" href="/guides/avoiding-beak-things">
+            <h4>How To Survive Beak Things</h4>
+            <p>The apex predator that teaches you to check the horizon.</p>
+          </a>
+          <a class="card" href="/guides/best-money-making-methods">
+            <h4>Best Money Methods</h4>
+            <p>From copper mining to Leviathan pearls — income by game stage.</p>
+          </a>
+          <a class="card" href="/guides/toughness-training">
+            <h4>Toughness Training</h4>
+            <p>How to grow strong by losing fights on purpose.</p>
+          </a>
+      </div>
+
+      
+      <div class="ad-slot ad-in-article" role="complementary" aria-label="Advertisement">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle"
+          style="display:block;"
+          data-ad-client="ca-pub-1319817671788428"
+          data-ad-slot="6141169453"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      </div>
+    
+
+      <div class="home-grid">
+        <div class="page">
+          <h2>Major Factions</h2>
+          <div class="breadcrumb">Know who will help you — and who will sell you.</div>
+          <div class="chip-list">
+            <a class="chip" href="/factions/holy-nation">The Holy Nation</a><a class="chip" href="/factions/shek-kingdom">The Shek Kingdom</a><a class="chip" href="/factions/united-cities">The United Cities</a><a class="chip" href="/factions/tech-hunters">The Tech Hunters</a>
+          </div>
+          <p style="margin-top:14px;"><a href="/factions">Open the full Faction Guide &rarr;</a></p>
+        </div>
+        <div class="page">
+          <h2>Best Beginner Guides</h2>
+          <div class="breadcrumb">The pages new wanderers come back to.</div>
+          <ul class="link-list">
+            <li><a href="/guides/surviving-first-week">Surviving Your First Week</a></li><li><a href="/guides/desert-survival">Desert Survival</a></li><li><a href="/guides/anti-bandit-strategies">Anti-Bandit Strategies</a></li><li><a href="/guides/injury-recovery">Injury Recovery Guide</a></li><li><a href="/guides/avoiding-early-death">Avoiding Early Death</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="page">
+        <h2>Why Kenshi Is Different</h2>
+        <p>Most games hand you a destiny. Kenshi hands you a body, a harsh world, and complete indifference about whether you live. There is no chosen hero, no story railroad, no enemy scaling politely to your level.</p>
+        <p>Defeat is not a game over screen — it is how characters grow. A squad beaten unconscious by bandits wakes up, heals, and comes back tougher. You learn the map, the factions and your own limits the hard way, and that is exactly the point.</p>
+        <p><a href="/getting-started">Read the Getting Started guide &rarr;</a></p>
+      </div>
+
+      <div class="page">
+        <h2>Latest News &mdash; Kenshi 2 — In Development</h2>
+        <div class="breadcrumb">Ongoing</div>
+        <ul><li>Kenshi 2 is the announced prequel/sequel from Lo-Fi Games, set roughly a thousand years before the original.</li><li>Built on Unreal Engine, a major shift from the original Kenshi engine, targeting better performance and visuals.</li><li>Promises a more vibrant, less collapsed world that players will see fall toward the wasteland of Kenshi 1.</li><li>No confirmed release date — treat all Kenshi 2 details as subject to change until Lo-Fi Games confirms them.</li></ul>
+        <p><a href="/patches">View full patch history &rarr;</a></p>
+      </div>
+    </main>
+      <aside class="right" id="rightNav">
+      <h3>Most Searched</h3>
+      <ul>
+        <li><a href="/guides/best-base-locations">Best Base Locations</a></li>
+        <li><a href="/guides/surviving-first-week">Beginner Guide</a></li>
+        <li><a href="/factions">Faction Guide</a></li>
+        <li><a href="/guides/toughness-training">Toughness Training</a></li>
+        <li><a href="/guides/best-money-making-methods">Best Money Methods</a></li>
+        <li><a href="/regions">Wasteland Map</a></li>
+        <li><a href="/creatures/beak-things">Beak Things</a></li>
+      </ul>
+      
+      <h3>Wanderer's Note</h3>
+      <p class="qd">&ldquo;A garru pack animal carries the loot you would otherwise leave in the sand.&rdquo;</p>
+      <h3>Kenshi 2</h3>
+      <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
+      
+      <div class="ad-slot ad-rectangle" role="complementary" aria-label="Advertisement">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle"
+          style="display:block;"
+          data-ad-client="ca-pub-1319817671788428"
+          data-ad-slot="6141169453"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      </div>
+    
+    </aside>
+    </div>
+
+    <footer class="site">
+      <p class="footer-tagline">Survive long enough to matter.</p>
+      <nav class="footer-links" aria-label="External resources">
+        <a
+          href="https://store.steampowered.com/app/233860/Kenshi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Steam</a
+        >
+        <a
+          href="https://www.lofigames.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Lo-Fi Games</a
+        >
+        <a
+          href="https://www.reddit.com/r/Kenshi/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Reddit</a
+        >
+        <a href="/patches">Patch Notes</a>
+      </nav>
+      <nav class="footer-links" aria-label="Site information">
+        <a href="/about">About</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <p>
+        Unofficial fan wiki · Kenshi is © Lo-Fi Games · GameWikiHub · &copy;
+        2026. All rights reserved.
+      </p>
+    </footer>
+
+    <script src="/js/data.js"></script>
+    <script src="/js/meta.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

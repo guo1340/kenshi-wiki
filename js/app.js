@@ -62,7 +62,7 @@
     const f = format || 'rectangle';
     const isBanner = f === 'banner';
     return `
-      <aside class="ad-slot ad-${esc(f)}" aria-label="Advertisement">
+      <div class="ad-slot ad-${esc(f)}" role="complementary" aria-label="Advertisement">
         <span class="ad-label">Advertisement</span>
         <ins class="adsbygoogle"
           style="display:block;${isBanner ? 'width:100%;height:90px;' : ''}"
@@ -70,7 +70,7 @@
           data-ad-slot="6141169453"
           ${isBanner ? '' : 'data-ad-format="auto"'}
           data-full-width-responsive="true"></ins>
-      </aside>
+      </div>
     `;
   }
 
@@ -370,6 +370,7 @@
 
     main.innerHTML = `
       <div class="hero">
+        <img class="hero-bg" src="/assets/images/hero/homepage-hero.jpg" alt="Kenshi wasteland gameplay scene" loading="eager">
         <div class="hero-fog"></div>
         <div class="hero-inner">
           <span class="hero-kicker">Wasteland Survival Manual</span>
@@ -550,9 +551,9 @@
   }
 
   function renderSkillsList() {
-    const stateKey = 'skills-filters';
-    const state = loadState(stateKey, { cat: 'all', search: '' });
     const cats = ['all', 'Combat', 'Weapon', 'Utility'];
+    const initialState = loadState('skills-filters', { cat: 'all', search: '' });
+    const initialRows = D.skills.slice();
     main.innerHTML = `
       ${adSlot('banner')}
       <div class="page">
@@ -564,16 +565,32 @@
             <span class="filter-label">Category</span>
             ${cats.map((t) => `<button data-f="cat" data-v="${t}">${titleCase(t)}</button>`).join('')}
           </div>
-          <input type="text" class="filter-search" placeholder="Filter by name…" data-f="search" value="${esc(state.search)}">
-          <span class="result-count" id="skCount"></span>
+          <input type="text" class="filter-search" placeholder="Filter by name…" data-f="search" value="${esc(initialState.search)}">
+          <span class="result-count" id="skCount">${D.skills.length} of ${D.skills.length}</span>
         </div>
-        <table class="data">
-          <thead><tr><th>Skill</th><th>Category</th><th>What It Governs</th></tr></thead>
-          <tbody id="skBody"></tbody>
-        </table>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Skill</th><th>Category</th><th>What It Governs</th></tr></thead>
+            <tbody id="skBody">${skillRowsHTML(initialRows)}</tbody>
+          </table>
+        </div>
       </div>
       ${adSlot('in-article')}
     `;
+    bindSkillsTable();
+  }
+
+  function bindSkillsTable() {
+    if (!D.skills || !D.skills.length) return;
+    const toolbar = $('#skTb');
+    const body = $('#skBody');
+    const count = $('#skCount');
+    const search = toolbar && toolbar.querySelector('input.filter-search');
+    if (!toolbar || !body || !count || !search) return;
+    const stateKey = 'skills-filters';
+    const state = loadState(stateKey, { cat: 'all', search: search.value || '' });
+    state.cat = ['all', 'Combat', 'Weapon', 'Utility'].includes(state.cat) ? state.cat : 'all';
+    if (state.search) search.value = state.search;
     function applyAndRender() {
       saveState(stateKey, state);
       let rows = D.skills.slice();
@@ -582,28 +599,31 @@
         const q = state.search.toLowerCase();
         rows = rows.filter((s) => s.name.toLowerCase().includes(q));
       }
-      $('#skBody').innerHTML = rows.length === 0
-        ? `<tr><td colspan="3"><div class="empty-result">No skills match.</div></td></tr>`
-        : rows.map((s) => `
-          <tr>
-            <td><a href="/skills/${esc(s.id)}" class="row-link">${esc(s.name)}</a></td>
-            <td>${tag(s.category)}</td>
-            <td>${esc(s.governs)}</td>
-          </tr>`).join('');
+      $('#skBody').innerHTML = skillRowsHTML(rows);
       $('#skCount').textContent = `${rows.length} of ${D.skills.length}`;
       document.querySelectorAll('#skTb [data-f="cat"]').forEach((b) => b.classList.toggle('active', b.dataset.v === state.cat));
     }
-    document.querySelectorAll('#skTb [data-f="cat"]').forEach((b) => {
-      b.onclick = () => { state.cat = b.dataset.v; applyAndRender(); };
+    toolbar.querySelectorAll('[data-f="cat"]').forEach((b) => {
+      b.addEventListener('click', () => { state.cat = b.dataset.v; applyAndRender(); });
     });
-    const si = $('#skTb input.filter-search');
-    si.oninput = () => { state.search = si.value; applyAndRender(); };
+    search.addEventListener('input', () => { state.search = search.value; applyAndRender(); });
     applyAndRender();
   }
 
+  function skillRowsHTML(rows) {
+    return rows.length === 0
+      ? `<tr><td colspan="3"><div class="empty-result">No skills match.</div></td></tr>`
+      : rows.map((s) => `
+        <tr>
+          <td><a href="/skills/${esc(s.id)}" class="row-link">${esc(s.name)}</a></td>
+          <td>${tag(s.category)}</td>
+          <td>${esc(s.governs)}</td>
+        </tr>`).join('');
+  }
+
   function renderWeaponsList() {
-    const stateKey = 'weapons-filters';
-    const state = loadState(stateKey, { type: 'all', search: '' });
+    const initialState = loadState('weapons-filters', { type: 'all', search: '' });
+    const initialRows = D.weapons.slice();
     main.innerHTML = `
       ${adSlot('banner')}
       <div class="page">
@@ -615,16 +635,32 @@
             <span class="filter-label">Type</span>
             ${['all', 'Melee', 'Ranged'].map((t) => `<button data-f="type" data-v="${t}">${titleCase(t)}</button>`).join('')}
           </div>
-          <input type="text" class="filter-search" placeholder="Filter by name…" data-f="search" value="${esc(state.search)}">
-          <span class="result-count" id="wpnCount"></span>
+          <input type="text" class="filter-search" placeholder="Filter by name…" data-f="search" value="${esc(initialState.search)}">
+          <span class="result-count" id="wpnCount">${D.weapons.length} of ${D.weapons.length}</span>
         </div>
-        <table class="data">
-          <thead><tr><th>Weapon</th><th>Category</th><th>Type</th><th>Best For</th></tr></thead>
-          <tbody id="wpnBody"></tbody>
-        </table>
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Weapon</th><th>Category</th><th>Type</th><th>Best For</th></tr></thead>
+            <tbody id="wpnBody">${weaponRowsHTML(initialRows)}</tbody>
+          </table>
+        </div>
       </div>
       ${adSlot('in-article')}
     `;
+    bindWeaponsTable();
+  }
+
+  function bindWeaponsTable() {
+    if (!D.weapons || !D.weapons.length) return;
+    const toolbar = $('#wpnTb');
+    const body = $('#wpnBody');
+    const count = $('#wpnCount');
+    const search = toolbar && toolbar.querySelector('input.filter-search');
+    if (!toolbar || !body || !count || !search) return;
+    const stateKey = 'weapons-filters';
+    const state = loadState(stateKey, { type: 'all', search: search.value || '' });
+    state.type = ['all', 'Melee', 'Ranged'].includes(state.type) ? state.type : 'all';
+    if (state.search) search.value = state.search;
     function applyAndRender() {
       saveState(stateKey, state);
       let rows = D.weapons.slice();
@@ -633,24 +669,27 @@
         const q = state.search.toLowerCase();
         rows = rows.filter((w) => w.name.toLowerCase().includes(q));
       }
-      $('#wpnBody').innerHTML = rows.length === 0
-        ? `<tr><td colspan="4"><div class="empty-result">No weapons match.</div></td></tr>`
-        : rows.map((w) => `
-          <tr>
-            <td><a href="/weapons/${esc(w.id)}" class="row-link">${esc(w.name)}</a></td>
-            <td>${tag(w.cat)}</td>
-            <td>${tag(w.weaponType, w.weaponType === 'Ranged' ? 'bad' : '')}</td>
-            <td>${esc(w.bestFor)}</td>
-          </tr>`).join('');
+      $('#wpnBody').innerHTML = weaponRowsHTML(rows);
       $('#wpnCount').textContent = `${rows.length} of ${D.weapons.length}`;
       document.querySelectorAll('#wpnTb [data-f="type"]').forEach((b) => b.classList.toggle('active', b.dataset.v === state.type));
     }
-    document.querySelectorAll('#wpnTb [data-f="type"]').forEach((b) => {
-      b.onclick = () => { state.type = b.dataset.v; applyAndRender(); };
+    toolbar.querySelectorAll('[data-f="type"]').forEach((b) => {
+      b.addEventListener('click', () => { state.type = b.dataset.v; applyAndRender(); });
     });
-    const si = $('#wpnTb input.filter-search');
-    si.oninput = () => { state.search = si.value; applyAndRender(); };
+    search.addEventListener('input', () => { state.search = search.value; applyAndRender(); });
     applyAndRender();
+  }
+
+  function weaponRowsHTML(rows) {
+    return rows.length === 0
+      ? `<tr><td colspan="4"><div class="empty-result">No weapons match.</div></td></tr>`
+      : rows.map((w) => `
+        <tr>
+          <td><a href="/weapons/${esc(w.id)}" class="row-link">${esc(w.name)}</a></td>
+          <td>${tag(w.cat)}</td>
+          <td>${tag(w.weaponType, w.weaponType === 'Ranged' ? 'bad' : '')}</td>
+          <td>${esc(w.bestFor)}</td>
+        </tr>`).join('');
   }
 
   /* ============================================================
@@ -852,6 +891,7 @@
      SEARCH
      ============================================================ */
   function buildSearchIndex() {
+    if (Array.isArray(D.searchIndex)) return D.searchIndex;
     const index = [];
     const add = (arr, section, sub, nameKey) => {
       (D[arr] || []).forEach((e) => index.push({
@@ -935,22 +975,24 @@
     try { localStorage.setItem('kw:' + key, JSON.stringify(state)); } catch (e) { /* ignore */ }
   }
 
-  document.addEventListener('click', (e) => {
-    const a = e.target.closest('a[href]');
-    if (!a) return;
-    const href = a.getAttribute('href');
-    if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('#')) return;
-    const url = new URL(href, location.origin);
-    if (url.origin !== location.origin) return;
-    e.preventDefault();
-    go(url.pathname);
-  });
+  // Static pages are fully prerendered. Let normal links load their matching
+  // files so local servers, crawlers and deployed hosting all behave the same.
 
-  window.addEventListener('popstate', () => {
-    leftNav.classList.remove('open');
+  function hydrateStaticPage() {
+    const route = parseRoute();
+    if (route === '/skills') bindSkillsTable();
+    if (route === '/weapons') bindWeaponsTable();
+    setTimeout(loadAds, 100);
+  }
+
+  if (window.__KW_PRERENDER__) {
+    window.addEventListener('popstate', () => {
+      leftNav.classList.remove('open');
+      navigate();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
     navigate();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  navigate();
+  } else {
+    hydrateStaticPage();
+  }
 })();
