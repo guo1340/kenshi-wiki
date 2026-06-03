@@ -997,6 +997,24 @@
     setTimeout(loadAds, 100);
   }
 
+  function releaseLoadingBuffer() {
+    const body = document.body;
+    if (!body || !body.classList.contains('is-loading')) return;
+    body.classList.add('chrome-ready');
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          body.classList.add('content-ready');
+          body.classList.remove('is-loading');
+          const buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) {
+            setTimeout(() => buffer.remove(), 360);
+          }
+        }, 260);
+      });
+    });
+  }
+
   if (window.__KW_PRERENDER__) {
     window.addEventListener('popstate', () => {
       leftNav.classList.remove('open');
@@ -1006,5 +1024,6 @@
     navigate();
   } else {
     hydrateStaticPage();
+    releaseLoadingBuffer();
   }
 })();

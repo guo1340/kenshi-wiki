@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -164,7 +176,7 @@
             <div class="callout tip"><span class="callout-label">Wanderer&#39;s Tip</span>Plant a small food farm first and confirm it feeds the squad before expanding into cash crops.</div>
             <h3>Overview</h3><p>Farms grow food and trade crops directly at your base. Wheat, rice, greenfruit, cactus and hemp each suit different ground and climates.</p><h3>Fertility &amp; Climate</h3><p>Every crop has a fertility and climate requirement. Greenfruit wants green fertile ground; cactus tolerates arid land; hemp grows in the swamp. Check the ground before you plant.</p><h3>Water &amp; Irrigation</h3><p>Most farms need water access or irrigation, which ties farming to your water supply. Arid sites can still farm cactus with minimal water.</p><h3>Scaling Up</h3><p>Start with enough food crops to feed the squad, then expand into trade crops or processing chains once survival is secured.</p>
             
-            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Check your squad’s races against a region before you travel into it.&rdquo;</p></div>
+            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Running away is not losing. It is the most reliable survival tool you have.&rdquo;</p></div>
             <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -268,5 +280,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

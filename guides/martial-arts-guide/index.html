@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -160,7 +172,7 @@
         <p class="lore">A martial artist carries no weapon, so the wasteland can never take one. That is the whole appeal.</p>
         <p>Build Martial Arts with Dodge and Toughness, keep armour and encumbrance light, and use captivity as natural training.</p>
         <h3>The Core Build</h3><p>A martial artist relies on Martial Arts for offence and Dodge plus Toughness for survival. They avoid hits rather than block them, so the defensive skills are not optional.</p><h3>Gear Rules</h3><p>Martial Arts is penalised by armour on the hands and by encumbrance. Keep the build light — light armour, low carried weight — or the damage collapses.</p><h3>Training It</h3><p>Fight unarmed against capable enemies near guards. Captivity is ideal training — an enslaved character keeps no weapon, so a slave camp doubles as a dojo.</p><h3>Strengths &amp; Weaknesses</h3><p>Martial artists can never be disarmed and excel against unarmoured foes, but struggle against heavy armour and are fragile while the build is still developing.</p>
-        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Check your squad’s races against a region before you travel into it.&rdquo;</p></div>
+        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Never travel with a single character. A second body can drag the first to safety.&rdquo;</p></div>
         <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -205,7 +217,7 @@
             </ul>
             
             <h3>Wanderer's Note</h3>
-            <p class="qd">&ldquo;Buy a Bonedog puppy early and raise it through your squad’s fights.&rdquo;</p>
+            <p class="qd">&ldquo;Heavy armour is stronger than it looks. Put it on your front-line tank.&rdquo;</p>
             <h3>Kenshi 2</h3>
             <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
             
@@ -253,5 +265,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

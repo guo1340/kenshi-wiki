@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -160,7 +172,7 @@
         <p class="lore">The wasteland will train your squad for free. The trick is surviving the lesson.</p>
         <p>Use town guards, training dummies, captivity and controlled fights to build stats without losing characters.</p>
         <h3>Guard-Assisted Training</h3><p>Lead enemies to town guards and fight alongside them. Your characters gain combat XP while the guards ensure the fight stays survivable.</p><h3>Training Equipment</h3><p>Training dummies and similar base equipment build combat skills safely, with no risk. Slow, but ideal for early characters who cannot yet fight.</p><h3>Controlled Fights</h3><p>Pick fights you can win against enemies slightly above your level, near a fallback. Losing carefully trains Toughness; winning trains everything else.</p><h3>Captivity As Training</h3><p>Enslavement forces labour and hardship that train Strength, Athletics and Toughness. A planned stint as a slave is a legitimate training strategy.</p>
-        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Squin is the safest beginner base. If you are lost, go there.&rdquo;</p></div>
+        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Sell Ancient tech and research books to Tech Hunters — they pay far better.&rdquo;</p></div>
         <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -205,7 +217,7 @@
             </ul>
             
             <h3>Wanderer's Note</h3>
-            <p class="qd">&ldquo;Pick your base location before your base design. Location decides the whole run.&rdquo;</p>
+            <p class="qd">&ldquo;Squin is the safest beginner base. If you are lost, go there.&rdquo;</p>
             <h3>Kenshi 2</h3>
             <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
             
@@ -253,5 +265,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

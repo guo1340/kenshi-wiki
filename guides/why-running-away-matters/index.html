@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -160,7 +172,7 @@
         <p class="lore">Kenshi does not reward courage. It rewards judgement — and judgement often says run.</p>
         <p>Retreat preserves the run, trains Athletics, and turns losing fights into survivable ones. It is a skill, not a shame.</p>
         <h3>Running Is A Mechanic</h3><p>Kenshi is designed around the option to retreat. Enemies you cannot beat today can be avoided, outrun, or fought later when your squad is stronger.</p><h3>Athletics Makes It Possible</h3><p>Retreat only works if you are fast enough. Train Athletics early and keep encumbrance low so your squad can actually escape what it cannot beat.</p><h3>When To Run</h3><p>Run when you are outnumbered with no guards near, when a predator appears, or when a fight is going badly and a character is close to going down.</p><h3>Failing Forward</h3><p>Even a lost fight is progress if everyone survives — Toughness rises, lessons are learned. The unrecoverable loss is the squad that should have run and did not.</p>
-        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;The Fog Islands eat the downed. A loss there is usually permanent.&rdquo;</p></div>
+        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Heavy armour is stronger than it looks. Put it on your front-line tank.&rdquo;</p></div>
         <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -205,7 +217,7 @@
             </ul>
             
             <h3>Wanderer's Note</h3>
-            <p class="qd">&ldquo;Heavy armour is stronger than it looks. Put it on your front-line tank.&rdquo;</p>
+            <p class="qd">&ldquo;Never travel with a single character. A second body can drag the first to safety.&rdquo;</p>
             <h3>Kenshi 2</h3>
             <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
             
@@ -253,5 +265,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

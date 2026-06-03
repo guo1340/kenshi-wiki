@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -160,7 +172,7 @@
         <p class="lore">In Kenshi you do not die from the hit. You die from what you do in the hour after it.</p>
         <p>Treat wounds fast, get downed characters to safety, manage blood loss, and use beds and medics to recover properly.</p>
         <h3>Wounds &amp; Blood Loss</h3><p>Damage leaves wounds that bleed. Untreated bleeding can kill a character who survived the fight itself. Apply first aid quickly with bandages or a medic.</p><h3>Downed Characters</h3><p>A knocked-out character is not dead — but they are vulnerable to predators and slavers. Get them to safety, ideally a bed in a town or base, before enemies return.</p><h3>Healing Properly</h3><p>Rest in beds speeds recovery, and a high-Field-Medic character heals the squad faster. Robotic characters need Repair Kits and the Robotics skill instead.</p><h3>Common Mistakes</h3><p>Ignoring bleeding, leaving downed characters in the open, and pushing a half-healed squad straight back into danger. Recovery is part of the fight.</p>
-        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Pick your base location before your base design. Location decides the whole run.&rdquo;</p></div>
+        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Running away is not losing. It is the most reliable survival tool you have.&rdquo;</p></div>
         <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -253,5 +265,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -160,7 +172,7 @@
         <p class="lore">Pick the location wrong and you will spend the whole run apologising for it.</p>
         <p>The best sites balance resources, defensibility and a survivable raid profile — start safe before attempting an ambitious one.</p>
         <h3>What To Look For</h3><p>A strong site has nearby ore and water, fertile-enough ground to farm, a defensible shape with natural chokepoints, and a raid profile your squad can beat.</p><h3>Safe Starter Sites</h3><p>Green, calmer regions near Shek or quiet borderlands make forgiving first bases. They raid lightly enough for a developing squad to survive learning.</p><h3>Ambitious Sites</h3><p>Resource-rich or strategically placed sites near dangerous regions reward strong squads but raid hard. Earn them with a second base, not a first.</p><h3>Common Mistakes</h3><p>Settling for ore while ignoring water, choosing flat indefensible ground, and basing in a region whose raids outmatch the squad. Location decides the whole campaign.</p>
-        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Buy a Bonedog puppy early and raise it through your squad’s fights.&rdquo;</p></div>
+        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Train Athletics early — a fast squad chooses which fights happen.&rdquo;</p></div>
         <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -205,7 +217,7 @@
             </ul>
             
             <h3>Wanderer's Note</h3>
-            <p class="qd">&ldquo;Fight at chokepoints. Being surrounded, not being outmatched, is what kills squads.&rdquo;</p>
+            <p class="qd">&ldquo;Toughness is trained by losing. Get downed where guards will save you, then heal and repeat.&rdquo;</p>
             <h3>Kenshi 2</h3>
             <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
             
@@ -253,5 +265,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -164,7 +176,7 @@
             <div class="callout warn"><span class="callout-label">Beginner Warning</span>Fogmen will eat your downed characters. Unlike bandits, they do not leave a recoverable body. A loss in the Fog Islands is usually permanent.</div>
             <h3>Overview</h3><p>The Fogmen are Hivers whose minds have collapsed into a feral, ritualistic state. They infest the Fog Islands, worshipping the Fog Prince and dragging victims back to be devoured.</p><h3>Gameplay Impact</h3><p>The Fog Islands are one of the deadliest regions for an unprepared squad. Fogmen attack in endless waves, and a downed character is eaten alive — limbs first.</p><h3>Joining &amp; Reputation</h3><p>No alliance is possible. Hiver characters are not spared. Killing the Fog Prince is a major mid-game achievement.</p><h3>Military Strength</h3><p>Fogmen are individually weak but attack with no fear and no end. Their crude weapons still kill a squad that gets surrounded and exhausted.</p><h3>Best Uses</h3><p>Best for: dangerous Toughness training, Fog Prince bounty, and access to Fog Island ruins. For experienced squads only.</p>
             
-            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Never travel with a single character. A second body can drag the first to safety.&rdquo;</p></div>
+            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Beak Things are fast. The only safe response to one is a head start.&rdquo;</p></div>
             <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -220,7 +232,7 @@
               <li><a href="/cities">Cities</a></li>
             </ul>
             <h3>Wanderer's Note</h3>
-            <p class="qd">&ldquo;Check your squad’s races against a region before you travel into it.&rdquo;</p>
+            <p class="qd">&ldquo;A bite from a slaver patrol is not the end — captivity trains Strength and Toughness.&rdquo;</p>
             <h3>Kenshi 2</h3>
             <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
             
@@ -268,5 +280,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

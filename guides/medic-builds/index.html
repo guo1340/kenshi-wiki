@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -160,7 +172,7 @@
         <p class="lore">The medic never lands a hit and still decides who lives. Respect the role.</p>
         <p>Build a Field Medic with high medical skill, protect them in the back rank, and keep them stocked with supplies.</p>
         <h3>The Medic Role</h3><p>A dedicated medic patches wounds during and after fights, dramatically improving how much punishment a squad can take before losing anyone.</p><h3>Building One</h3><p>Train Field Medic by treating the squad's wounds. A high-skill medic heals faster and more effectively — it is worth dedicating a character to it.</p><h3>Keeping Them Safe</h3><p>Medics are not front-line fighters. Keep them behind the line, give them enough armour and Toughness to survive a stray hit, and protect them in formation.</p><h3>Supplies</h3><p>Medics need bandages and, for Skeleton squadmates, Repair Kits. Keep them stocked — a medic out of supplies is just an unarmed character in the back.</p>
-        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Pick your base location before your base design. Location decides the whole run.&rdquo;</p></div>
+        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;A garru pack animal carries the loot you would otherwise leave in the sand.&rdquo;</p></div>
         <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -205,7 +217,7 @@
             </ul>
             
             <h3>Wanderer's Note</h3>
-            <p class="qd">&ldquo;Skeletons ignore hunger, sleep and acid rain. They are the wasteland’s explorers.&rdquo;</p>
+            <p class="qd">&ldquo;Squin is the safest beginner base. If you are lost, go there.&rdquo;</p>
             <h3>Kenshi 2</h3>
             <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
             
@@ -253,5 +265,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -164,7 +176,7 @@
             <div class="callout warn"><span class="callout-label">Beginner Warning</span>Freeing one slave inside a UC city feels heroic and instantly turns the whole town hostile. Decide if you want the Anti-Slaver path before you do it.</div>
             <h3>Overview</h3><p>The United Cities is the largest faction by territory after the Holy Nation — a loose empire of city-states bound by trade, noble houses and the Traders Guild. It is wealthy, cosmopolitan and built on the backs of slaves.</p><p>Unlike the Holy Nation, the UC tolerates most races. What it does not tolerate is the poor, the troublesome, and anyone caught interfering with noble business.</p><h3>Gameplay Impact</h3><p>UC cities are economic powerhouses — the best vendors, the most lucrative bounties, the deepest markets. The eastern desert is also one of the richest mining regions in the game.</p><p>The catch is slavery. Get knocked out by UC forces while wanted and you can wake up in a slave camp. Noble characters wander with large escorts, and angering one drags an entire city's guard force onto you.</p><h3>Joining &amp; Reputation</h3><p>You raise UC reputation through bounties, trade and killing their enemies (the Anti-Slavers especially). Freeing slaves, attacking nobles or smuggling will sink it quickly.</p><p>Friendly status opens recruitment, safe trade and access to noble questlines. The Anti-Slavers will despise you for it.</p><h3>Military Strength</h3><p>UC Samurai are among the best-equipped human soldiers in the game — heavy armour, quality sabres and large patrols. Their Heavy Armoury sells some of the strongest non-craftable plate available.</p><p>Their weakness is corruption: guards are competent but the empire is overextended, and Reavers, the Holy Nation and rebels all chew at its edges.</p><h3>Best Uses</h3><p>Best for: trade, mid-game economy, bounty income, and buying top-tier armour. A cleared UC city is one of the strongest mid-game home bases on the map.</p>
             
-            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Toughness is trained by losing. Get downed where guards will save you, then heal and repeat.&rdquo;</p></div>
+            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Beak Things are fast. The only safe response to one is a head start.&rdquo;</p></div>
             <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -220,7 +232,7 @@
               <li><a href="/cities">Cities</a></li>
             </ul>
             <h3>Wanderer's Note</h3>
-            <p class="qd">&ldquo;A bite from a slaver patrol is not the end — captivity trains Strength and Toughness.&rdquo;</p>
+            <p class="qd">&ldquo;Pick your base location before your base design. Location decides the whole run.&rdquo;</p>
             <h3>Kenshi 2</h3>
             <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
             
@@ -268,5 +280,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

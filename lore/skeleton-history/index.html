@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -164,7 +176,7 @@
             
             <h3>Overview</h3><p>Skeletons are robotic beings created during the Ancient era. They have endured for centuries, making them living — or at least functioning — records of a history no organic remembers.</p><h3>Role In The Collapse</h3><p>Skeleton lore is bound up with the fall of the Ancient civilisation. Some Skeletons were soldiers, some labourers, some something else — and their accounts hint at the catastrophe's shape.</p><h3>The Broken</h3><p>Many Skeletons degraded over the centuries into the Broken — the malfunctioning Skeleton Bandits — their minds corrupted by time and damage.</p><h3>Why It Matters</h3><p>Surviving Skeletons like those found across the map are key witnesses to Kenshi's deepest lore, and tie directly to Cat-Lon and the Second Empire.</p>
             
-            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Skeletons ignore hunger, sleep and acid rain. They are the wasteland’s explorers.&rdquo;</p></div>
+            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Sell Ancient tech and research books to Tech Hunters — they pay far better.&rdquo;</p></div>
             <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -217,7 +229,7 @@
             </ul>
             
             <h3>Wanderer's Note</h3>
-            <p class="qd">&ldquo;Toughness is trained by losing. Get downed where guards will save you, then heal and repeat.&rdquo;</p>
+            <p class="qd">&ldquo;Skeletons ignore hunger, sleep and acid rain. They are the wasteland’s explorers.&rdquo;</p>
             <h3>Kenshi 2</h3>
             <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
             
@@ -265,5 +277,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -164,7 +176,7 @@
             
             <h3>What It Does</h3><p>Athletics sets your running speed. A faster character escapes danger, outpaces patrols, and chooses which fights happen.</p><h3>Hidden Effects</h3><p>Speed is reduced by encumbrance — carrying too much weight slows you and starves Athletics XP. A light, fast character controls the entire pace of the game.</p><h3>How XP Works</h3><p>Athletics trains simply by running, and trains faster while carrying weight (such as a body or heavy pack), since the character is "working" against load.</p><h3>Best Training Methods</h3><p>Travel everywhere on foot, and carry a knocked-out body or full pack while doing it to accelerate gains. Long marches double as free training.</p><h3>Common Mistakes</h3><p>Ignoring Athletics until something faster than you is chasing your squad. Train it early — slow characters die to things they could have outrun.</p>
             
-            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Check your squad’s races against a region before you travel into it.&rdquo;</p></div>
+            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Squin is the safest beginner base. If you are lost, go there.&rdquo;</p></div>
             <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -217,7 +229,7 @@
             </ul>
             
             <h3>Wanderer's Note</h3>
-            <p class="qd">&ldquo;Squin is the safest beginner base. If you are lost, go there.&rdquo;</p>
+            <p class="qd">&ldquo;Never travel with a single character. A second body can drag the first to safety.&rdquo;</p>
             <h3>Kenshi 2</h3>
             <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
             
@@ -265,5 +277,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

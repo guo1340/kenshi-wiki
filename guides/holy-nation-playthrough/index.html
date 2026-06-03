@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -160,7 +172,7 @@
         <p class="lore">Play the theocracy from the inside, and the wasteland&#39;s most dangerous faction becomes a homeland.</p>
         <p>Run a Greenlander squad aligned with the Holy Nation — safe territory, soldier recruits, and war against the Shek.</p>
         <h3>Setting Up</h3><p>A Holy Nation run wants a Greenlander male lead and squad — the only roster the theocracy fully tolerates. Base in their green, well-patrolled territory.</p><h3>Building Reputation</h3><p>Raise Holy Nation standing by killing their enemies — the Shek above all — and engaging their shrines and objectives. High reputation unlocks soldier recruitment.</p><h3>The Costs</h3><p>Siding with the Holy Nation makes enemies of the Shek and the Flotsam Ninjas, and means living with the faction's persecution of other races.</p><h3>The Experience</h3><p>A Holy Nation run is one of the safer, more structured ways to play — a clear faction home, clear enemies, and the game's most secure cities.</p>
-        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Skeletons ignore hunger, sleep and acid rain. They are the wasteland’s explorers.&rdquo;</p></div>
+        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Check your squad’s races against a region before you travel into it.&rdquo;</p></div>
         <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -205,7 +217,7 @@
             </ul>
             
             <h3>Wanderer's Note</h3>
-            <p class="qd">&ldquo;Heavy armour is stronger than it looks. Put it on your front-line tank.&rdquo;</p>
+            <p class="qd">&ldquo;Toughness is trained by losing. Get downed where guards will save you, then heal and repeat.&rdquo;</p>
             <h3>Kenshi 2</h3>
             <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
             
@@ -253,5 +265,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

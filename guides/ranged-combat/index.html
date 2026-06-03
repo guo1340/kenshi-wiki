@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -160,7 +172,7 @@
         <p class="lore">A crossbow line wins the fight before the enemy arrives — or shoots your own front rank if you let it.</p>
         <p>Crossbows deal damage before melee, but demand positioning to manage reload time and friendly fire.</p>
         <h3>The Value Of Range</h3><p>Crossbows let you damage enemies during their approach, softening raids and large creatures before melee even begins. On base walls they are invaluable.</p><h3>Friendly Fire</h3><p>Missed bolts can hit your own squad. Position shooters so their fire lines do not cross your melee, and stage melee to engage after the volley.</p><h3>Reload &amp; Positioning</h3><p>Crossbows reload slowly and are best used from a fixed, elevated position with clear sightlines — walls, towers, ridges.</p><h3>Best Uses</h3><p>Ranged shines in base defence and against slow, dangerous creatures like Leviathans. It is weaker in chaotic open melee.</p>
-        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Beak Things are fast. The only safe response to one is a head start.&rdquo;</p></div>
+        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;The Fog Islands eat the downed. A loss there is usually permanent.&rdquo;</p></div>
         <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -205,7 +217,7 @@
             </ul>
             
             <h3>Wanderer's Note</h3>
-            <p class="qd">&ldquo;Train Athletics early — a fast squad chooses which fights happen.&rdquo;</p>
+            <p class="qd">&ldquo;Beak Things are fast. The only safe response to one is a head start.&rdquo;</p>
             <h3>Kenshi 2</h3>
             <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
             
@@ -253,5 +265,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

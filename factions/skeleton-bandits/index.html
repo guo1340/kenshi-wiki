@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -164,7 +176,7 @@
             <div class="callout warn"><span class="callout-label">Beginner Warning</span>Do not try to outlast Skeleton Bandits in a war of attrition. They do not tire. You do.</div>
             <h3>Overview</h3><p>The Skeleton Bandits — often called the Broken — are malfunctioning Ancient Skeletons whose minds have degraded over the centuries. They roam the wastes attacking travellers, driven by corrupted programming rather than survival.</p><h3>Gameplay Impact</h3><p>They are far deadlier than human bandits of similar level. They do not get hungry, do not flee, and keep fighting on broken limbs. They patrol around ruins and the Deadlands.</p><h3>Joining &amp; Reputation</h3><p>You cannot ally with them. They are universally hostile. Killing them raises standing with most ordinary factions.</p><h3>Military Strength</h3><p>Skeleton bodies shrug off bleeding and cutting damage and are vulnerable mostly to blunt force. They favour heavy weapons. Their relentlessness is the real threat — they will chase a wounded squad to its death.</p><h3>Best Uses</h3><p>Best for: salvage. Their corpses yield Skeleton Repair Kits, robotics components and Ancient parts worth real money.</p>
             
-            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Skeletons ignore hunger, sleep and acid rain. They are the wasteland’s explorers.&rdquo;</p></div>
+            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Running away is not losing. It is the most reliable survival tool you have.&rdquo;</p></div>
             <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -220,7 +232,7 @@
               <li><a href="/cities">Cities</a></li>
             </ul>
             <h3>Wanderer's Note</h3>
-            <p class="qd">&ldquo;Never travel with a single character. A second body can drag the first to safety.&rdquo;</p>
+            <p class="qd">&ldquo;The Fog Islands eat the downed. A loss there is usually permanent.&rdquo;</p>
             <h3>Kenshi 2</h3>
             <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
             
@@ -268,5 +280,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -164,7 +176,7 @@
             <div class="callout warn"><span class="callout-label">Beginner Warning</span>Each base is raided separately. Do not build a second base until your squad can defend both at once.</div>
             <h3>Overview</h3><p>A multi-base strategy runs more than one settlement — for example a safe production base and a forward outpost near dangerous, resource-rich regions.</p><h3>Why Do It</h3><p>Multiple bases let you exploit resources spread across the map, stage expeditions closer to deep regions, and avoid putting every asset in one raidable place.</p><h3>The Cost</h3><p>Every base raids independently and needs its own defenders. Splitting a squad across bases risks each one being too thin to hold. Multi-basing demands a large, well-trained roster.</p><h3>When To Expand</h3><p>Expand to a second base only once your first is stable, profitable and defensible, and your squad is large enough to garrison both.</p>
             
-            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Buy a Bonedog puppy early and raise it through your squad’s fights.&rdquo;</p></div>
+            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Train Athletics early — a fast squad chooses which fights happen.&rdquo;</p></div>
             <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -220,7 +232,7 @@
               <li><a href="/base-building/raid-defense">Raid defence</a></li>
             </ul>
             <h3>Wanderer's Note</h3>
-            <p class="qd">&ldquo;Train Athletics early — a fast squad chooses which fights happen.&rdquo;</p>
+            <p class="qd">&ldquo;Squin is the safest beginner base. If you are lost, go there.&rdquo;</p>
             <h3>Kenshi 2</h3>
             <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
             
@@ -268,5 +280,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

@@ -408,6 +408,103 @@ main {
   min-width: 0;
 }
 
+body.is-loading #main {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+}
+
+#main {
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+body.content-ready #main {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.page-load-buffer {
+  position: fixed;
+  top: clamp(118px, 15vh, 180px);
+  left: 50%;
+  z-index: 700;
+  width: min(560px, calc(100vw - 32px));
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+
+body.content-ready .page-load-buffer {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.load-panel {
+  background:
+    linear-gradient(180deg, rgba(35, 27, 21, 0.98), rgba(12, 10, 9, 0.98)),
+    repeating-linear-gradient(0deg, rgba(214, 181, 107, 0.08) 0 1px, transparent 1px 12px);
+  border: 3px solid #050403;
+  box-shadow: inset 0 0 0 1px rgba(214, 181, 107, 0.28), 8px 8px 0 rgba(0, 0, 0, 0.4);
+  color: var(--sand);
+  padding: 20px 22px;
+  text-align: left;
+}
+
+.load-panel strong,
+.load-panel small,
+.load-kicker {
+  display: block;
+}
+
+.load-panel strong {
+  color: var(--text);
+  font-family: var(--head-font);
+  font-size: 28px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.load-kicker,
+.load-panel small {
+  color: var(--muted);
+  font-family: var(--body-font);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.load-panel small {
+  letter-spacing: 0.4px;
+  text-transform: none;
+}
+
+.load-line {
+  display: block;
+  height: 10px;
+  margin: 14px 0;
+  overflow: hidden;
+  background: #0b0908;
+  border: 1px solid rgba(214, 181, 107, 0.3);
+}
+
+.load-line::before {
+  content: "";
+  display: block;
+  width: 42%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--rust), var(--sand), var(--bronze));
+  animation: loadSweep 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes loadSweep {
+  from { transform: translateX(-65%); }
+  to { transform: translateX(165%); }
+}
+
 .loading {
   color: var(--muted);
   padding: 24px;

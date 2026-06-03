@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -164,7 +176,7 @@
             <div class="callout warn"><span class="callout-label">Beginner Warning</span>Fogmen eat the downed. A character lost in the Fog Islands is usually lost permanently. Fight only from a controlled chokepoint.</div>
             <h3>Danger Level</h3><p>Fogmen are an extreme threat — not through individual strength but through relentless, endless numbers in the Fog Islands.</p><h3>Behaviour</h3><p>They attack without fear or pause, swarming any squad in the fog and dragging the unconscious back to be eaten. There is no recovering an eaten character.</p><h3>Loot</h3><p>Individually they carry little, but the Fog Islands' ruins — accessible only by getting past the Fogmen — hold valuable Ancient tech.</p><h3>Weaknesses &amp; Counters</h3><p>Fogmen are individually weak — fight them at a wall or chokepoint so only a few engage at once, with ranged support thinning the rest. Never get surrounded in open fog.</p>
             
-            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Skeletons ignore hunger, sleep and acid rain. They are the wasteland’s explorers.&rdquo;</p></div>
+            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Buy a Bonedog puppy early and raise it through your squad’s fights.&rdquo;</p></div>
             <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -217,7 +229,7 @@
             </ul>
             
             <h3>Wanderer's Note</h3>
-            <p class="qd">&ldquo;Train Athletics early — a fast squad chooses which fights happen.&rdquo;</p>
+            <p class="qd">&ldquo;A garru pack animal carries the loot you would otherwise leave in the sand.&rdquo;</p>
             <h3>Kenshi 2</h3>
             <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
             
@@ -265,5 +277,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

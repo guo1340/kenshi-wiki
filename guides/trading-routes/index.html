@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -160,7 +172,7 @@
         <p class="lore">Trade is just knowing two prices and owning the legs to walk between them.</p>
         <p>Buy goods cheap where they are produced, sell dear where they are scarce, and run a steady circuit between towns.</p>
         <h3>How Trade Profit Works</h3><p>Goods are cheap near where they are produced and expensive where they are scarce. A trading route buys low at the source and sells high at the destination.</p><h3>Building A Route</h3><p>Identify a pair or loop of towns with a real price gap on some good, then run a regular circuit. A pack animal multiplies how much profit each trip carries.</p><h3>What To Trade</h3><p>Look for goods with a wide regional price gap. Specialised regional products and processed goods tend to move better than raw bulk ore.</p><h3>Risks</h3><p>Trade routes cross open country — bandits, predators and faction patrols all threaten a loaded caravan. Guard your traders or keep routes short and safe.</p>
-        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Check your squad’s races against a region before you travel into it.&rdquo;</p></div>
+        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Toughness is trained by losing. Get downed where guards will save you, then heal and repeat.&rdquo;</p></div>
         <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -205,7 +217,7 @@
             </ul>
             
             <h3>Wanderer's Note</h3>
-            <p class="qd">&ldquo;Buy a Bonedog puppy early and raise it through your squad’s fights.&rdquo;</p>
+            <p class="qd">&ldquo;A bite from a slaver patrol is not the end — captivity trains Strength and Toughness.&rdquo;</p>
             <h3>Kenshi 2</h3>
             <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
             
@@ -253,5 +265,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

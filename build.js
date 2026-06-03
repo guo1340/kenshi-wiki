@@ -20,7 +20,8 @@ const PARTIALS = {
   emergencyBar: readPartial('emergency-bar.html'),
   leftSidebar: readPartial('sidebar-left.html'),
   rightSidebar: readPartial('sidebar-right.html'),
-  footer: readPartial('footer.html')
+  footer: readPartial('footer.html'),
+  loadingBuffer: readPartial('loading-buffer.html')
 };
 
 function mkEl() {
@@ -134,6 +135,8 @@ function buildPage(template, route) {
     '<!-- kw:header -->\n    ' + PARTIALS.header.replace(/\n/g, '\n    ') + '\n    <!-- /kw:header -->');
   html = html.replace(/<!-- kw:emergency-bar -->[\s\S]*?<!-- \/kw:emergency-bar -->/,
     '<!-- kw:emergency-bar -->\n    ' + PARTIALS.emergencyBar.replace(/\n/g, '\n    ') + '\n    <!-- /kw:emergency-bar -->');
+  html = html.replace(/<!-- kw:loading-buffer -->[\s\S]*?<!-- \/kw:loading-buffer -->/,
+    '<!-- kw:loading-buffer -->\n    ' + PARTIALS.loadingBuffer.replace(/\n/g, '\n    ') + '\n    <!-- /kw:loading-buffer -->');
   html = html.replace(/<!-- kw:left-sidebar -->[\s\S]*?<!-- \/kw:left-sidebar -->/,
     '<!-- kw:left-sidebar -->\n      ' + leftSidebar.replace(/\n/g, '\n      ') + '\n      <!-- /kw:left-sidebar -->');
   html = html.replace(/<main id="main">[\s\S]*?<\/main>/,

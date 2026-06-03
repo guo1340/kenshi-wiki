@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -164,7 +176,7 @@
             <div class="callout warn"><span class="callout-label">Beginner Warning</span>Being enslaved is recoverable and even useful for training. Panicking and dying in the escape attempt is not.</div>
             <h3>Overview</h3><p>The Slave Traders capture, transport and sell people across United Cities territory, supplying labour to mines and noble estates. They are closely tied to the UC and despised by the Anti-Slavers.</p><h3>Gameplay Impact</h3><p>If your character is knocked out by slavers — or arrested in UC land while wanted — you can be enslaved rather than killed. You wake in a slave camp, collared, forced to work, and must escape.</p><p>This is not always a disaster. Enslavement is a viable, deliberate way to train Athletics, Labouring and Toughness while plotting a breakout.</p><h3>Joining &amp; Reputation</h3><p>You can technically work with slavers, but it tanks Anti-Slaver and Shek standing. Most players treat them purely as enemies.</p><h3>Military Strength</h3><p>Slaver patrols are armed and use harpoon weapons to drag down runners. They are mid-tier fighters whose real weapon is the collar and the cage.</p><h3>Best Uses</h3><p>Best for: a dramatic escaped-slave origin story, or harvesting bounties for the Anti-Slaver cause.</p>
             
-            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Pick your base location before your base design. Location decides the whole run.&rdquo;</p></div>
+            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Skeletons ignore hunger, sleep and acid rain. They are the wasteland’s explorers.&rdquo;</p></div>
             <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -268,5 +280,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>

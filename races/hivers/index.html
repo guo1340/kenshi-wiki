@@ -40,7 +40,8 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="is-loading">
+    <noscript><style>body.is-loading #main{opacity:1;visibility:visible;transform:none}.page-load-buffer{display:none}</style></noscript>
     <div class="scanlines" aria-hidden="true"></div>
 
     <!-- kw:header -->
@@ -85,6 +86,17 @@
       </span>
     </div>
     <!-- /kw:emergency-bar -->
+
+    <!-- kw:loading-buffer -->
+    <div class="page-load-buffer" id="pageLoadBuffer" role="status" aria-live="polite">
+      <div class="load-panel">
+        <span class="load-kicker">Wasteland briefing</span>
+        <strong>Assembling field manual</strong>
+        <span class="load-line"></span>
+        <small>Loading navigation, squad notes, and survival records...</small>
+      </div>
+    </div>
+    <!-- /kw:loading-buffer -->
 
     <div class="layout">
       <!-- kw:left-sidebar -->
@@ -164,7 +176,7 @@
             <div class="callout warn"><span class="callout-label">Beginner Warning</span>Hivers are attacked on sight in core Holy Nation towns. Keep Hiver characters to Shek, Hive and United Cities country.</div>
             <h3>Overview</h3><p>Hivers are insectoid humanoids divided into castes — Prince, Worker, Soldier Drone — each with distinct stat profiles. They originate from the Hive colonies.</p><h3>Strengths</h3><p>Hivers are fast, eat little (lower hunger drain), and certain castes have notable resilience. Soldier Drones make capable fighters and the Hive welcomes Hiver characters.</p><h3>Weaknesses</h3><p>The Holy Nation attacks Hivers on sight in core towns, and Hivers cannot wear standard footwear, limiting some boot options. They are socially the most restricted race.</p><h3>Best Playstyles</h3><p>Fast skirmishers, low-upkeep squads, and eastern Hive-aligned play. Avoid Holy Nation territory entirely.</p>
             
-            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Sell Ancient tech and research books to Tech Hunters — they pay far better.&rdquo;</p></div>
+            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;The Fog Islands eat the downed. A loss there is usually permanent.&rdquo;</p></div>
             <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -217,7 +229,7 @@
             </ul>
             
             <h3>Wanderer's Note</h3>
-            <p class="qd">&ldquo;Fight at chokepoints. Being surrounded, not being outmatched, is what kills squads.&rdquo;</p>
+            <p class="qd">&ldquo;Pick your base location before your base design. Location decides the whole run.&rdquo;</p>
             <h3>Kenshi 2</h3>
             <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
             
@@ -265,5 +277,15 @@
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+      window.setTimeout(function () {
+        if (document.body && document.body.classList.contains('is-loading')) {
+          document.body.classList.add('content-ready');
+          document.body.classList.remove('is-loading');
+          var buffer = document.getElementById('pageLoadBuffer');
+          if (buffer) buffer.remove();
+        }
+      }, 1400);
+    </script>
   </body>
 </html>
