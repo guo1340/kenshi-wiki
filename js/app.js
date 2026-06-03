@@ -925,10 +925,22 @@
     if (!q) { searchResults.classList.remove('open'); return; }
     const ql = q.toLowerCase();
     const matches = searchIndex
-      .filter((it) => it.title.toLowerCase().includes(ql) || it.sub.toLowerCase().includes(ql))
+      .filter((it) => {
+        const haystack = [
+          it.title,
+          it.sub,
+          it.desc,
+          it.summary,
+          Array.isArray(it.keywords) ? it.keywords.join(' ') : ''
+        ].filter(Boolean).join(' ').toLowerCase();
+        return haystack.includes(ql);
+      })
       .sort((a, b) => {
         const ax = a.title.toLowerCase().indexOf(ql);
         const bx = b.title.toLowerCase().indexOf(ql);
+        if (ax === -1 && bx === -1) return a.title.localeCompare(b.title);
+        if (ax === -1) return 1;
+        if (bx === -1) return -1;
         return ax - bx;
       })
       .slice(0, 12);

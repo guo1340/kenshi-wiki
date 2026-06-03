@@ -7,7 +7,19 @@
     {
       "title": "Surviving Your First Week",
       "sub": "Guide",
-      "href": "/guides/surviving-first-week"
+      "href": "/guides/surviving-first-week",
+      "desc": "First week survival plan covering safe towns, Athletics, copper income, food, first aid, recruits, early base-building mistakes, and when to leave town.",
+      "keywords": [
+        "first week",
+        "beginner survival",
+        "Athletics",
+        "Squin",
+        "The Hub",
+        "copper mining",
+        "base building too early",
+        "food",
+        "first aid"
+      ]
     },
     {
       "title": "Escaping Slavery",
