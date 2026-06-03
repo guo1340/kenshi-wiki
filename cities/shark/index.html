@@ -34,12 +34,6 @@
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2312100e'/%3E%3Ccircle cx='50' cy='50' r='17' fill='%23b89a63'/%3E%3Cg stroke='%238c3b2f' stroke-width='7' stroke-linecap='round'%3E%3Cline x1='50' y1='12' x2='50' y2='26'/%3E%3Cline x1='50' y1='74' x2='50' y2='88'/%3E%3Cline x1='12' y1='50' x2='26' y2='50'/%3E%3Cline x1='74' y1='50' x2='88' y2='50'/%3E%3Cline x1='23' y1='23' x2='33' y2='33'/%3E%3Cline x1='67' y1='67' x2='77' y2='77'/%3E%3Cline x1='77' y1='23' x2='67' y2='33'/%3E%3Cline x1='33' y1='67' x2='23' y2='77'/%3E%3C/g%3E%3C/svg%3E"
     />
 
-    <!-- ============================================
-     Google AdSense
-     To enable ads: replace ca-pub-XXXXXXXXXXXXXXXX in
-     index.html, app.js and ads.txt with your publisher
-     ID and slot IDs.
-     ============================================ -->
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1319817671788428"
@@ -49,18 +43,17 @@
   <body>
     <div class="scanlines" aria-hidden="true"></div>
 
+    <!-- kw:header -->
     <header class="site">
       <a class="logo" href="/">
         <span class="logo-mark">KW</span>
-        <span class="logo-text"
-          >KENSHI<small>WIKI · unofficial wasteland manual</small></span
-        >
+        <span class="logo-text">KENSHI<small>WIKI - unofficial wasteland manual</small></span>
       </a>
       <div class="search">
         <input
           type="text"
           id="searchInput"
-          placeholder="Search factions, regions, weapons, guides…"
+          placeholder="Search factions, regions, weapons, guides..."
           autocomplete="off"
           aria-label="Search the wiki"
         />
@@ -74,71 +67,76 @@
         <a href="/weapons">Weapons</a>
         <a href="/mods">Mods</a>
         <a href="/about">About</a>
+        <a class="network-home" href="https://gamewikihub.com/" rel="noopener">GameWikiHub</a>
       </nav>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        ☰
-      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">Menu</button>
     </header>
+    <!-- /kw:header -->
 
+    <!-- kw:emergency-bar -->
     <div class="emergency-bar" aria-hidden="true">
-      <span
-        >⚠ THE WASTELAND DOES NOT FORGIVE — TRAVEL ARMED — KEEP YOUR SQUAD FED —
-        CHECK THE REGION BEFORE YOU CROSS IT — RUN WHEN YOU MUST ⚠</span
-      >
-      <span
-        >⚠ THE WASTELAND DOES NOT FORGIVE — TRAVEL ARMED — KEEP YOUR SQUAD FED —
-        CHECK THE REGION BEFORE YOU CROSS IT — RUN WHEN YOU MUST ⚠</span
-      >
+      <span>
+        THE WASTELAND DOES NOT FORGIVE - TRAVEL ARMED - KEEP YOUR SQUAD FED -
+        CHECK THE REGION BEFORE YOU CROSS IT - RUN WHEN YOU MUST
+      </span>
+      <span>
+        THE WASTELAND DOES NOT FORGIVE - TRAVEL ARMED - KEEP YOUR SQUAD FED -
+        CHECK THE REGION BEFORE YOU CROSS IT - RUN WHEN YOU MUST
+      </span>
     </div>
+    <!-- /kw:emergency-bar -->
 
     <div class="layout">
+      <!-- kw:left-sidebar -->
       <aside class="left" id="leftNav">
-      <h3>Start Here</h3>
-      <ul>
-        <li><a href="/" data-r="/">Home</a></li>
-        <li><a href="/getting-started" data-r="/getting-started">Getting Started</a></li>
-        <li><a href="/guides" data-r="/guides">Survival Guides</a></li>
-      </ul>
-      <h3>The World</h3>
-      <ul>
-        <li><a href="/factions" data-r="/factions">Factions</a></li>
-        <li><a href="/regions" data-r="/regions">Regions &amp; Map</a></li>
-        <li><a href="/cities" data-r="/cities">Cities</a></li>
-        <li><a href="/lore" data-r="/lore">Lore</a></li>
-      </ul>
-      <h3>The Squad</h3>
-      <ul>
-        <li><a href="/skills" data-r="/skills">Skills &amp; Stats</a></li>
-        <li><a href="/races" data-r="/races">Races</a></li>
-        <li><a href="/weapons" data-r="/weapons">Weapons</a></li>
-        <li><a href="/armor" data-r="/armor">Armor</a></li>
-        <li><a href="/creatures" data-r="/creatures">Creatures</a></li>
-      </ul>
-      <h3>The Long Game</h3>
-      <ul>
-        <li><a href="/base-building" data-r="/base-building">Base Building</a></li>
-        <li><a href="/mods" data-r="/mods">Mods</a></li>
-        <li><a href="/tips" data-r="/tips">Wanderer's Notes</a></li>
-        <li><a href="/patches" data-r="/patches">Patch Notes</a></li>
-      </ul>
-      <h3>Site Info</h3>
-      <ul>
-        <li><a href="/about" data-r="/about">About</a></li>
-        <li><a href="/privacy-policy" data-r="/privacy-policy">Privacy Policy</a></li>
-        <li><a href="/contact" data-r="/contact">Contact</a></li>
-      </ul>
-      
-      <div class="ad-slot ad-half-page" role="complementary" aria-label="Advertisement">
-        <span class="ad-label">Advertisement</span>
-        <ins class="adsbygoogle"
-          style="display:block;"
-          data-ad-client="ca-pub-1319817671788428"
-          data-ad-slot="6141169453"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-      </div>
-    
-    </aside>
+            <h3>Start Here</h3>
+            <ul>
+              <li><a href="/" data-r="/">Home</a></li>
+              <li><a href="/getting-started" data-r="/getting-started">Getting Started</a></li>
+              <li><a href="/guides" data-r="/guides">Survival Guides</a></li>
+            </ul>
+            <h3>The World</h3>
+            <ul>
+              <li><a href="/factions" data-r="/factions">Factions</a></li>
+              <li><a href="/regions" data-r="/regions">Regions &amp; Map</a></li>
+              <li><a href="/cities" data-r="/cities">Cities</a></li>
+              <li><a href="/lore" data-r="/lore">Lore</a></li>
+            </ul>
+            <h3>The Squad</h3>
+            <ul>
+              <li><a href="/skills" data-r="/skills">Skills &amp; Stats</a></li>
+              <li><a href="/races" data-r="/races">Races</a></li>
+              <li><a href="/weapons" data-r="/weapons">Weapons</a></li>
+              <li><a href="/armor" data-r="/armor">Armor</a></li>
+              <li><a href="/creatures" data-r="/creatures">Creatures</a></li>
+            </ul>
+            <h3>The Long Game</h3>
+            <ul>
+              <li><a href="/base-building" data-r="/base-building">Base Building</a></li>
+              <li><a href="/mods" data-r="/mods">Mods</a></li>
+              <li><a href="/tips" data-r="/tips">Wanderer's Notes</a></li>
+              <li><a href="/patches" data-r="/patches">Patch Notes</a></li>
+            </ul>
+            <h3>Site Info</h3>
+            <ul>
+              <li><a href="/about" data-r="/about">About</a></li>
+              <li><a href="/privacy-policy" data-r="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="/contact" data-r="/contact">Contact</a></li>
+            </ul>
+            
+            <div class="ad-slot ad-half-page" role="complementary" aria-label="Advertisement">
+              <span class="ad-label">Advertisement</span>
+              <ins class="adsbygoogle"
+                style="display:block;"
+                data-ad-client="ca-pub-1319817671788428"
+                data-ad-slot="6141169453"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            </div>
+          
+          </aside>
+      <!-- /kw:left-sidebar -->
+
       <main id="main">
       
       <div class="ad-slot ad-banner" role="complementary" aria-label="Advertisement">
@@ -166,7 +164,7 @@
             <div class="callout tip"><span class="callout-label">Wanderer&#39;s Tip</span>Shark is the natural hub for a hashish-trading run — process hemp nearby and sell into a market that does not ask questions.</div>
             <h3>Who Controls It</h3><p>Shark is a large independent city in the Swamp, effectively run by criminal interests and the drug economy. No major faction holds it.</p><h3>Shops &amp; Services</h3><p>Grey-market vendors, drug buyers, and bars thick with mercenaries and outlaws. A natural home for smuggling and hashish trade.</p><h3>Defences &amp; Dangers</h3><p>Town guards keep order loosely; the swamp around it brings Blood Spiders and acid rain. Crime is tolerated inside in a way it never is in UC or Holy Nation cities.</p><h3>Best Reasons To Visit</h3><p>Hashish selling, recruiting outlaw mercenaries, and an outlaw-economy base free of faction politics.</p>
             
-            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;A bite from a slaver patrol is not the end — captivity trains Strength and Toughness.&rdquo;</p></div>
+            <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Pick your base location before your base design. Location decides the whole run.&rdquo;</p></div>
             <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -204,60 +202,55 @@
       </div>
     
     </main>
+
+      <!-- kw:right-sidebar -->
       <aside class="right" id="rightNav">
-      <h3>Most Searched</h3>
-      <ul>
-        <li><a href="/guides/best-base-locations">Best Base Locations</a></li>
-        <li><a href="/guides/surviving-first-week">Beginner Guide</a></li>
-        <li><a href="/factions">Faction Guide</a></li>
-        <li><a href="/guides/toughness-training">Toughness Training</a></li>
-        <li><a href="/guides/best-money-making-methods">Best Money Methods</a></li>
-        <li><a href="/regions">Wasteland Map</a></li>
-        <li><a href="/creatures/beak-things">Beak Things</a></li>
-      </ul>
-      <h3>Related</h3><ul>
-        <li><a href="/factions">Factions</a></li>
-        <li><a href="/creatures">Creatures</a></li>
-      </ul>
-      <h3>Wanderer's Note</h3>
-      <p class="qd">&ldquo;Toughness is trained by losing. Get downed where guards will save you, then heal and repeat.&rdquo;</p>
-      <h3>Kenshi 2</h3>
-      <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
-      
-      <div class="ad-slot ad-rectangle" role="complementary" aria-label="Advertisement">
-        <span class="ad-label">Advertisement</span>
-        <ins class="adsbygoogle"
-          style="display:block;"
-          data-ad-client="ca-pub-1319817671788428"
-          data-ad-slot="6141169453"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-      </div>
-    
-    </aside>
+            <h3>Most Searched</h3>
+            <ul>
+              <li><a href="/guides/best-base-locations">Best Base Locations</a></li>
+              <li><a href="/guides/surviving-first-week">Beginner Guide</a></li>
+              <li><a href="/factions">Faction Guide</a></li>
+              <li><a href="/guides/toughness-training">Toughness Training</a></li>
+              <li><a href="/guides/best-money-making-methods">Best Money Methods</a></li>
+              <li><a href="/regions">Wasteland Map</a></li>
+              <li><a href="/creatures/beak-things">Beak Things</a></li>
+            </ul>
+            <h3>Related</h3><ul>
+              <li><a href="/factions">Factions</a></li>
+              <li><a href="/creatures">Creatures</a></li>
+            </ul>
+            <h3>Wanderer's Note</h3>
+            <p class="qd">&ldquo;The Fog Islands eat the downed. A loss there is usually permanent.&rdquo;</p>
+            <h3>Kenshi 2</h3>
+            <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
+            
+            <div class="ad-slot ad-rectangle" role="complementary" aria-label="Advertisement">
+              <span class="ad-label">Advertisement</span>
+              <ins class="adsbygoogle"
+                style="display:block;"
+                data-ad-client="ca-pub-1319817671788428"
+                data-ad-slot="6141169453"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            </div>
+          
+          </aside>
+      <!-- /kw:right-sidebar -->
     </div>
 
+    <!-- kw:footer -->
     <footer class="site">
       <p class="footer-tagline">Survive long enough to matter.</p>
       <nav class="footer-links" aria-label="External resources">
+        <a href="https://gamewikihub.com/" rel="noopener">GameWikiHub</a>
         <a
           href="https://store.steampowered.com/app/233860/Kenshi/"
           target="_blank"
           rel="noopener noreferrer"
           >Steam</a
         >
-        <a
-          href="https://www.lofigames.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Lo-Fi Games</a
-        >
-        <a
-          href="https://www.reddit.com/r/Kenshi/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Reddit</a
-        >
+        <a href="https://www.lofigames.com/" target="_blank" rel="noopener noreferrer">Lo-Fi Games</a>
+        <a href="https://www.reddit.com/r/Kenshi/" target="_blank" rel="noopener noreferrer">Reddit</a>
         <a href="/patches">Patch Notes</a>
       </nav>
       <nav class="footer-links" aria-label="Site information">
@@ -266,10 +259,11 @@
         <a href="/contact">Contact</a>
       </nav>
       <p>
-        Unofficial fan wiki · Kenshi is © Lo-Fi Games · GameWikiHub · &copy;
+        Unofficial fan wiki - Kenshi is copyright Lo-Fi Games - GameWikiHub - &copy;
         2026. All rights reserved.
       </p>
     </footer>
+    <!-- /kw:footer -->
 
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>

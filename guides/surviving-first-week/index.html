@@ -34,12 +34,6 @@
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2312100e'/%3E%3Ccircle cx='50' cy='50' r='17' fill='%23b89a63'/%3E%3Cg stroke='%238c3b2f' stroke-width='7' stroke-linecap='round'%3E%3Cline x1='50' y1='12' x2='50' y2='26'/%3E%3Cline x1='50' y1='74' x2='50' y2='88'/%3E%3Cline x1='12' y1='50' x2='26' y2='50'/%3E%3Cline x1='74' y1='50' x2='88' y2='50'/%3E%3Cline x1='23' y1='23' x2='33' y2='33'/%3E%3Cline x1='67' y1='67' x2='77' y2='77'/%3E%3Cline x1='77' y1='23' x2='67' y2='33'/%3E%3Cline x1='33' y1='67' x2='23' y2='77'/%3E%3C/g%3E%3C/svg%3E"
     />
 
-    <!-- ============================================
-     Google AdSense
-     To enable ads: replace ca-pub-XXXXXXXXXXXXXXXX in
-     index.html, app.js and ads.txt with your publisher
-     ID and slot IDs.
-     ============================================ -->
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1319817671788428"
@@ -49,18 +43,17 @@
   <body>
     <div class="scanlines" aria-hidden="true"></div>
 
+    <!-- kw:header -->
     <header class="site">
       <a class="logo" href="/">
         <span class="logo-mark">KW</span>
-        <span class="logo-text"
-          >KENSHI<small>WIKI · unofficial wasteland manual</small></span
-        >
+        <span class="logo-text">KENSHI<small>WIKI - unofficial wasteland manual</small></span>
       </a>
       <div class="search">
         <input
           type="text"
           id="searchInput"
-          placeholder="Search factions, regions, weapons, guides…"
+          placeholder="Search factions, regions, weapons, guides..."
           autocomplete="off"
           aria-label="Search the wiki"
         />
@@ -74,71 +67,76 @@
         <a href="/weapons">Weapons</a>
         <a href="/mods">Mods</a>
         <a href="/about">About</a>
+        <a class="network-home" href="https://gamewikihub.com/" rel="noopener">GameWikiHub</a>
       </nav>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        ☰
-      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">Menu</button>
     </header>
+    <!-- /kw:header -->
 
+    <!-- kw:emergency-bar -->
     <div class="emergency-bar" aria-hidden="true">
-      <span
-        >⚠ THE WASTELAND DOES NOT FORGIVE — TRAVEL ARMED — KEEP YOUR SQUAD FED —
-        CHECK THE REGION BEFORE YOU CROSS IT — RUN WHEN YOU MUST ⚠</span
-      >
-      <span
-        >⚠ THE WASTELAND DOES NOT FORGIVE — TRAVEL ARMED — KEEP YOUR SQUAD FED —
-        CHECK THE REGION BEFORE YOU CROSS IT — RUN WHEN YOU MUST ⚠</span
-      >
+      <span>
+        THE WASTELAND DOES NOT FORGIVE - TRAVEL ARMED - KEEP YOUR SQUAD FED -
+        CHECK THE REGION BEFORE YOU CROSS IT - RUN WHEN YOU MUST
+      </span>
+      <span>
+        THE WASTELAND DOES NOT FORGIVE - TRAVEL ARMED - KEEP YOUR SQUAD FED -
+        CHECK THE REGION BEFORE YOU CROSS IT - RUN WHEN YOU MUST
+      </span>
     </div>
+    <!-- /kw:emergency-bar -->
 
     <div class="layout">
+      <!-- kw:left-sidebar -->
       <aside class="left" id="leftNav">
-      <h3>Start Here</h3>
-      <ul>
-        <li><a href="/" data-r="/">Home</a></li>
-        <li><a href="/getting-started" data-r="/getting-started">Getting Started</a></li>
-        <li><a href="/guides" data-r="/guides">Survival Guides</a></li>
-      </ul>
-      <h3>The World</h3>
-      <ul>
-        <li><a href="/factions" data-r="/factions">Factions</a></li>
-        <li><a href="/regions" data-r="/regions">Regions &amp; Map</a></li>
-        <li><a href="/cities" data-r="/cities">Cities</a></li>
-        <li><a href="/lore" data-r="/lore">Lore</a></li>
-      </ul>
-      <h3>The Squad</h3>
-      <ul>
-        <li><a href="/skills" data-r="/skills">Skills &amp; Stats</a></li>
-        <li><a href="/races" data-r="/races">Races</a></li>
-        <li><a href="/weapons" data-r="/weapons">Weapons</a></li>
-        <li><a href="/armor" data-r="/armor">Armor</a></li>
-        <li><a href="/creatures" data-r="/creatures">Creatures</a></li>
-      </ul>
-      <h3>The Long Game</h3>
-      <ul>
-        <li><a href="/base-building" data-r="/base-building">Base Building</a></li>
-        <li><a href="/mods" data-r="/mods">Mods</a></li>
-        <li><a href="/tips" data-r="/tips">Wanderer's Notes</a></li>
-        <li><a href="/patches" data-r="/patches">Patch Notes</a></li>
-      </ul>
-      <h3>Site Info</h3>
-      <ul>
-        <li><a href="/about" data-r="/about">About</a></li>
-        <li><a href="/privacy-policy" data-r="/privacy-policy">Privacy Policy</a></li>
-        <li><a href="/contact" data-r="/contact">Contact</a></li>
-      </ul>
-      
-      <div class="ad-slot ad-half-page" role="complementary" aria-label="Advertisement">
-        <span class="ad-label">Advertisement</span>
-        <ins class="adsbygoogle"
-          style="display:block;"
-          data-ad-client="ca-pub-1319817671788428"
-          data-ad-slot="6141169453"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-      </div>
-    
-    </aside>
+            <h3>Start Here</h3>
+            <ul>
+              <li><a href="/" data-r="/">Home</a></li>
+              <li><a href="/getting-started" data-r="/getting-started">Getting Started</a></li>
+              <li><a href="/guides" data-r="/guides">Survival Guides</a></li>
+            </ul>
+            <h3>The World</h3>
+            <ul>
+              <li><a href="/factions" data-r="/factions">Factions</a></li>
+              <li><a href="/regions" data-r="/regions">Regions &amp; Map</a></li>
+              <li><a href="/cities" data-r="/cities">Cities</a></li>
+              <li><a href="/lore" data-r="/lore">Lore</a></li>
+            </ul>
+            <h3>The Squad</h3>
+            <ul>
+              <li><a href="/skills" data-r="/skills">Skills &amp; Stats</a></li>
+              <li><a href="/races" data-r="/races">Races</a></li>
+              <li><a href="/weapons" data-r="/weapons">Weapons</a></li>
+              <li><a href="/armor" data-r="/armor">Armor</a></li>
+              <li><a href="/creatures" data-r="/creatures">Creatures</a></li>
+            </ul>
+            <h3>The Long Game</h3>
+            <ul>
+              <li><a href="/base-building" data-r="/base-building">Base Building</a></li>
+              <li><a href="/mods" data-r="/mods">Mods</a></li>
+              <li><a href="/tips" data-r="/tips">Wanderer's Notes</a></li>
+              <li><a href="/patches" data-r="/patches">Patch Notes</a></li>
+            </ul>
+            <h3>Site Info</h3>
+            <ul>
+              <li><a href="/about" data-r="/about">About</a></li>
+              <li><a href="/privacy-policy" data-r="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="/contact" data-r="/contact">Contact</a></li>
+            </ul>
+            
+            <div class="ad-slot ad-half-page" role="complementary" aria-label="Advertisement">
+              <span class="ad-label">Advertisement</span>
+              <ins class="adsbygoogle"
+                style="display:block;"
+                data-ad-client="ca-pub-1319817671788428"
+                data-ad-slot="6141169453"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            </div>
+          
+          </aside>
+      <!-- /kw:left-sidebar -->
+
       <main id="main">
       
       <div class="ad-slot ad-banner" role="complementary" aria-label="Advertisement">
@@ -162,7 +160,7 @@
         <p class="lore">Your first week is not about winning. It is about not dying for reasons you could have avoided.</p>
         <p>Pick a safe town, earn starting cash, train Athletics, recruit a second body, and delay risky goals until the squad can survive being knocked down.</p>
         <h3>Overview</h3><p>The first week in Kenshi is not a heroic opening act. It is a survival test. Your real goal is to build a small safety net: a town you can retreat to, enough cats for food and first aid, enough Athletics to leave bad fights, and at least one backup character who can rescue the person who gets knocked out.</p><p>A strong first week usually looks boring on paper. You mine a little copper, loot bandits after guards finish them, buy food before you need it, sleep off injuries, and scout routes instead of charging into them. That is not wasted time. It is the foundation that lets the rest of the run become interesting instead of ending in a ditch outside The Hub.</p><p>Think of week one as building four kinds of insurance. Money insures you against hunger and missing medical supplies. Athletics insures you against bad fights. A second squad member insures you against unconsciousness. Familiar routes insure you against wandering into a biome that is technically nearby but functionally lethal. If all four are improving, the run is healthy even if nobody has won a glorious duel yet.</p><p>The best beginner mindset is conservative, not passive. You are not hiding forever. You are choosing fights and trips that teach something without gambling the entire save. Getting beaten by Hungry Bandits near guards is useful. Getting eaten by Beak Things in Vain because you wanted to see the map is just donating limbs to the ecosystem.</p><h3>Why It Matters</h3><p>Kenshi teaches through consequences. A bad fight can become training, but only if someone survives long enough to heal. A starving squad can technically keep walking, but every fight becomes worse. A new base can technically be built on day two, but raids, taxes, food shortages and travel time can turn it into a slow disaster.</p><p>Most beginner frustration comes from treating Kenshi like a normal RPG. You do not need to clear enemies near the starter town. You do not need to build a base immediately. You do not need to win early fights. You need to stay alive, learn the map, and let small failures improve your characters instead of wiping them.</p><p>This is also why early goals should be modest. Kenshi has many exciting long-term plans: founding a city, hunting ancient labs, fighting major factions, running hashish, building a robot economy, or raising a squad of martial artists. All of those become easier once your squad can move quickly, heal reliably, and survive a defeat. If you skip that foundation, every ambitious plan becomes fragile.</p><p>The first week also sets your habits. Players who learn to scout, retreat, carry medicine, and recover properly tend to enjoy Kenshi much more than players who reload every loss. The game becomes richer when defeat is part of the story instead of something you treat as failure.</p><h3>Practical Uses</h3><p>For a safe first week, use a town as your anchor. The Hub works as a rough start, but Squin is often a better early base because guards, shops and nearby resources make recovery easier. Mine copper when you need money, but do not turn the whole game into a mining simulator. Use mining as a starter income, not as your identity.</p><p>Buy first aid kits early. Keep food on every organic character. Let Hungry Bandits or Dust Bandits chase you toward guards if you need training or loot. If a fight looks close, run before your squad is fully surrounded. If one character goes down, have another character pick them up and carry them to a bed. That rescue loop is one of the most important habits a new player can learn.</p><p>A good first-week route is simple: settle near a guarded town, earn starter cats, recruit one cheap companion, train Athletics through travel, loot safe battlefield leftovers, and only then start exploring nearby regions like the Border Zone or safer Shek territory.</p><p>On day one, check your food, nearby shops, and local guards before you start wandering. If you begin near The Hub, mine copper only long enough to buy food and a basic medkit, then consider moving toward Squin for better recovery options. If you start elsewhere, find the nearest settlement and learn which faction controls it before you assume it is safe.</p><p>Your first recruit does not need to be perfect. Their job is to rescue, carry supplies, heal wounds, and keep the run alive if your main character gets folded. A mediocre recruit with a medkit is often more valuable than a lone character with slightly better stats. Once you have two bodies, split risk carefully: one character can mine or loot while the other stays mobile enough to help.</p><p>When you travel, zoom out and watch the horizon. Pause often. Check patrol direction. Give predators and large squads a wide path. If enemies start chasing you, do not wait until they are on top of you to decide. Click toward guards, roads, or terrain that buys time. Most early disasters become survivable if you start running ten seconds earlier.</p><h3>Strengths</h3><p>The cautious first-week approach is reliable because it gives you multiple escape valves. Town guards cover fights you cannot win. Beds shorten recovery. Shops solve food and medicine problems. A second character prevents a single knockout from becoming a death spiral. Athletics training makes every later plan safer, from trading to smuggling to exploration.</p><p>This approach also teaches Kenshi's real rhythm. You learn that losing a fight is acceptable, that overconfidence kills more squads than weak stats, and that travel planning matters as much as combat planning.</p><p>Another strength of this opening is flexibility. It works for wanderer starts, roleplay starts, solo runs, and ordinary beginner playthroughs. You can pivot into trading, stealth, combat training, faction work, or base-building once the squad has enough stability. You are not locking yourself into copper mining or guard baiting forever. You are buying the freedom to choose later.</p><p>It also avoids the common trap of over-specialising too early. A squad that only mines is rich but helpless. A squad that only fights is often broke and starving. A squad that only sneaks may panic when a fight becomes unavoidable. A balanced first week gives you a little money, a little movement, a little toughness, and a little map knowledge.</p><h3>Weaknesses</h3><p>The downside is that safe play can feel slow. Copper mining near town is useful, but it is not the whole game. If you spend ten hours mining because it feels safe, you may end up bored before Kenshi opens up. The other weakness is false confidence: after a few guard-assisted wins, beginners often assume their squad is stronger than it is and walk straight into Beak Things, Skinner's Roam, the Swamp, or faction territory that does not tolerate them.</p><p>Use the safe start to prepare for risk, not to avoid risk forever.</p><p>The other weakness is that safe towns can create bad instincts. Guards are useful teachers, but they can also make you lazy. If every fight is solved by sprinting to the gate, you may not learn formation, retreat timing, medical triage, or how quickly a wounded character collapses under weight. Use guards as backup, then slowly test fights farther from town as your squad improves.</p><p>This approach also does not solve faction-specific danger. A human male may feel comfortable near the Holy Nation while a Skeleton or non-human squad has a very different experience. United Cities territory can be profitable, but slavery and poverty checks make mistakes expensive. Always adapt the first-week plan to who your squad is and whose land you are crossing.</p><h3>Community Opinions</h3><p>Community advice is fairly consistent on the first week: run often, train Athletics early, keep food and first aid on hand, and use towns as safety nets. Steam discussions often recommend copper mining near a town as the safest first income, while Reddit threads frequently warn that early base-building is where new players get punished hardest.</p><p>The debated part is how long to stay safe. Some players enjoy the slow copper-and-training opening. Others argue that Kenshi is best when you accept messy failures and start traveling earlier. My recommendation is to do enough safe work to avoid random death, then leave town before the opening becomes a chore.</p><p>There is also a long-running community split around mining. Many veterans recommend copper because it is predictable and easy to understand. Others warn that too much mining teaches new players to grind instead of explore. Both sides are right in context. Mine enough to stabilise. Stop once you can afford food, medicine, a bed, and maybe a recruit. After that, travel, loot, trade, train, and let the world teach you.</p><p>Base-building advice is even more unanimous: delay it unless you deliberately want pressure. Experienced players often suggest buying a town house first because it gives storage and research access without raids. A wilderness base is fun, but it turns Kenshi into logistics, farming, defense, power, water, and tax management all at once. That is a lot to learn while your squad still loses to local bandits.</p><h3>Common Mistakes</h3><p>The biggest mistake is fighting fair. Kenshi is not fair, and you should not be either. Pull enemies to guards, retreat from bad terrain, use doors and gates, and let enemies bleed themselves out before looting them.</p><p>Another common mistake is building a base too early. A base creates raids, taxes, food pressure, logistics problems and defense obligations. For most new players, buying a house in town is a better first step than planting a settlement in the wilderness.</p><p>Other early mistakes include carrying too much weight before Athletics is trained, recruiting more mouths than you can feed, ignoring injuries, sending everyone into the same fight, and exploring predator regions before you can outrun the predators.</p><p>A subtler mistake is ignoring encumbrance. New players often carry every weapon, every piece of junk, and every stack of ore they can find. That trains Strength, but it also makes escaping much harder. Use weight deliberately. If you are traveling through danger, move light. If you are training Strength near safety, carry heavy loads where rescue is possible.</p><p>Another mistake is treating unconscious characters as helpless background scenery. They are urgent. Check whether they are bleeding, whether enemies are still nearby, and whether someone can carry them. Field medicine saves lives, but beds save time. If a character is badly wounded and you can afford a bed, use it.</p><p>Finally, do not recruit faster than your income. More squad members mean more food, more medical supplies, more gear, and more bodies to rescue. A small squad you can feed is stronger than a large hungry group with no plan.</p><h3>Recommendations</h3><p>If this is your first run, I recommend a small, disciplined opening. Keep your squad to one to three characters. Stay near Squin, The Hub or another guarded settlement. Train Athletics naturally by walking between safe locations. Make money through copper, battlefield loot and small trade runs. Buy food before hunger becomes urgent. Buy beds or rent them when wounds are serious.</p><p>Do not build a permanent base in week one unless you specifically want chaos. Do not chase high-value ruins until you understand the route. Do not measure progress by victories. Measure it by whether your squad is faster, tougher, better supplied and less dependent on luck than it was yesterday.</p><p>A practical first-week checklist looks like this: buy or loot food, buy at least one first aid kit, earn a few thousand cats, recruit one backup character, train Athletics through safe travel, learn one or two nearby towns, and avoid founding a base. If you can do that, you are ready to start choosing a direction.</p><p>For combat, start with controlled losses. Let weak enemies hurt you near safety. Heal properly. Repeat when recovered. Do not chase toughness by getting eaten, enslaved accidentally, or beaten somewhere nobody can rescue you. Toughness is powerful because surviving defeat makes future defeats less dangerous, but the key word is surviving.</p><p>For exploration, pick one nearby goal at a time. Visit Squin. Scout the Border Zone. Learn which roads have patrols. Watch Beak Things from a distance before pretending you can fight them. Kenshi rewards curiosity, but it rewards prepared curiosity much more than blind wandering.</p><h3>Related Articles</h3><p>After this guide, read <a href="/guides/avoiding-early-death">Avoiding Early Death</a> for survival habits, <a href="/guides/best-beginner-starts">Best Beginner Starts</a> for safer openings, <a href="/guides/training-safely">Training Safely</a> for early stat growth, <a href="/guides/best-money-making-methods">Best Money Making Methods</a> for income options, <a href="/guides/why-running-away-matters">Why Running Away Matters</a> for the most important Kenshi habit, and <a href="/base-building/best-base-locations">Best Base Locations</a> once you are actually ready to settle.</p><p>If you are still in the first few hours, prioritise <a href="/guides/avoiding-early-death">Avoiding Early Death</a> and <a href="/guides/why-running-away-matters">Why Running Away Matters</a>. If you have a stable squad, move into <a href="/guides/training-safely">Training Safely</a>, <a href="/guides/melee-combat-basics">Melee Combat Basics</a>, and <a href="/guides/squad-formation">Squad Formation Guide</a>. If money is the problem, use <a href="/guides/best-money-making-methods">Best Money Making Methods</a> before committing to a base.</p>
-        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Beak Things are fast. The only safe response to one is a head start.&rdquo;</p></div>
+        <div class="survivor-tip"><span class="st-label">Wanderer's Note</span><p>&ldquo;Sell Ancient tech and research books to Tech Hunters — they pay far better.&rdquo;</p></div>
         <nav class="related" aria-label="Related pages">
       <h3>Related Pages</h3>
       <div class="related-grid">
@@ -192,57 +190,52 @@
       </div>
     
     </main>
+
+      <!-- kw:right-sidebar -->
       <aside class="right" id="rightNav">
-      <h3>Most Searched</h3>
-      <ul>
-        <li><a href="/guides/best-base-locations">Best Base Locations</a></li>
-        <li><a href="/guides/surviving-first-week">Beginner Guide</a></li>
-        <li><a href="/factions">Faction Guide</a></li>
-        <li><a href="/guides/toughness-training">Toughness Training</a></li>
-        <li><a href="/guides/best-money-making-methods">Best Money Methods</a></li>
-        <li><a href="/regions">Wasteland Map</a></li>
-        <li><a href="/creatures/beak-things">Beak Things</a></li>
-      </ul>
-      
-      <h3>Wanderer's Note</h3>
-      <p class="qd">&ldquo;Beak Things are fast. The only safe response to one is a head start.&rdquo;</p>
-      <h3>Kenshi 2</h3>
-      <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
-      
-      <div class="ad-slot ad-rectangle" role="complementary" aria-label="Advertisement">
-        <span class="ad-label">Advertisement</span>
-        <ins class="adsbygoogle"
-          style="display:block;"
-          data-ad-client="ca-pub-1319817671788428"
-          data-ad-slot="6141169453"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-      </div>
-    
-    </aside>
+            <h3>Most Searched</h3>
+            <ul>
+              <li><a href="/guides/best-base-locations">Best Base Locations</a></li>
+              <li><a href="/guides/surviving-first-week">Beginner Guide</a></li>
+              <li><a href="/factions">Faction Guide</a></li>
+              <li><a href="/guides/toughness-training">Toughness Training</a></li>
+              <li><a href="/guides/best-money-making-methods">Best Money Methods</a></li>
+              <li><a href="/regions">Wasteland Map</a></li>
+              <li><a href="/creatures/beak-things">Beak Things</a></li>
+            </ul>
+            
+            <h3>Wanderer's Note</h3>
+            <p class="qd">&ldquo;Pick your base location before your base design. Location decides the whole run.&rdquo;</p>
+            <h3>Kenshi 2</h3>
+            <p class="qd">Kenshi 2 — In Development &mdash; the prequel from Lo-Fi Games. <a href="/patches">Read more.</a></p>
+            
+            <div class="ad-slot ad-rectangle" role="complementary" aria-label="Advertisement">
+              <span class="ad-label">Advertisement</span>
+              <ins class="adsbygoogle"
+                style="display:block;"
+                data-ad-client="ca-pub-1319817671788428"
+                data-ad-slot="6141169453"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            </div>
+          
+          </aside>
+      <!-- /kw:right-sidebar -->
     </div>
 
+    <!-- kw:footer -->
     <footer class="site">
       <p class="footer-tagline">Survive long enough to matter.</p>
       <nav class="footer-links" aria-label="External resources">
+        <a href="https://gamewikihub.com/" rel="noopener">GameWikiHub</a>
         <a
           href="https://store.steampowered.com/app/233860/Kenshi/"
           target="_blank"
           rel="noopener noreferrer"
           >Steam</a
         >
-        <a
-          href="https://www.lofigames.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Lo-Fi Games</a
-        >
-        <a
-          href="https://www.reddit.com/r/Kenshi/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Reddit</a
-        >
+        <a href="https://www.lofigames.com/" target="_blank" rel="noopener noreferrer">Lo-Fi Games</a>
+        <a href="https://www.reddit.com/r/Kenshi/" target="_blank" rel="noopener noreferrer">Reddit</a>
         <a href="/patches">Patch Notes</a>
       </nav>
       <nav class="footer-links" aria-label="Site information">
@@ -251,10 +244,11 @@
         <a href="/contact">Contact</a>
       </nav>
       <p>
-        Unofficial fan wiki · Kenshi is © Lo-Fi Games · GameWikiHub · &copy;
+        Unofficial fan wiki - Kenshi is copyright Lo-Fi Games - GameWikiHub - &copy;
         2026. All rights reserved.
       </p>
     </footer>
+    <!-- /kw:footer -->
 
     <script src="/js/data.js"></script>
     <script src="/js/meta.js"></script>

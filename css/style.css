@@ -269,6 +269,16 @@ nav.top a:hover {
   text-decoration: none;
 }
 
+nav.top a.network-home {
+  border: 1px solid rgba(184, 154, 99, 0.5);
+  color: #f0d9a0;
+  margin-left: 4px;
+}
+
+nav.top a.network-home:hover {
+  border-color: var(--sand);
+}
+
 .menu-toggle {
   display: none;
   background: none;
@@ -1955,6 +1965,18 @@ table.data .row-link {
 footer.site {
   background: #070605;
   border-top: 3px solid var(--rust);
+}
+
+nav.top a.network-home {
+  border: 1px solid rgba(184, 154, 99, 0.7);
+  color: #f4dda4;
+  margin-left: 4px;
+}
+
+nav.top a.network-home:hover {
+  background: rgba(121, 51, 38, 0.4);
+  border-color: var(--sand);
+  color: #fff3c4;
 }
 
 @media (max-width: 1100px) {

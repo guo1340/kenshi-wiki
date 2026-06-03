@@ -9,6 +9,19 @@
 const fs = require('fs');
 const path = require('path');
 const ROOT = __dirname;
+const PARTIAL_DIR = path.join(ROOT, 'partials');
+
+function readPartial(name) {
+  return fs.readFileSync(path.join(PARTIAL_DIR, name), 'utf8').trim();
+}
+
+const PARTIALS = {
+  header: readPartial('header.html'),
+  emergencyBar: readPartial('emergency-bar.html'),
+  leftSidebar: readPartial('sidebar-left.html'),
+  rightSidebar: readPartial('sidebar-right.html'),
+  footer: readPartial('footer.html')
+};
 
 function mkEl() {
   const el = {
@@ -110,16 +123,25 @@ function jsonLdBlock(route) {
 function buildPage(template, route) {
   let html = template;
   const r = renderRoute(route);
+  const leftSidebar = PARTIALS.leftSidebar.replace('<!-- kw:leftNav -->', r.leftNav);
+  const rightSidebar = PARTIALS.rightSidebar.replace('<!-- kw:rightNav -->', r.rightNav);
+
   html = html.replace(/<!-- kw:head -->[\s\S]*?<!-- \/kw:head -->/,
     '<!-- kw:head -->\n' + headBlock(route) + '\n    <!-- /kw:head -->');
   html = html.replace(/<script type="application\/ld\+json" id="kw-jsonld">[\s\S]*?<\/script>/,
     jsonLdBlock(route));
-  html = html.replace(/<aside class="left" id="leftNav">[\s\S]*?<main id="main">/,
-    '<aside class="left" id="leftNav">' + r.leftNav + '</aside>\n      <main id="main">');
+  html = html.replace(/<!-- kw:header -->[\s\S]*?<!-- \/kw:header -->/,
+    '<!-- kw:header -->\n    ' + PARTIALS.header.replace(/\n/g, '\n    ') + '\n    <!-- /kw:header -->');
+  html = html.replace(/<!-- kw:emergency-bar -->[\s\S]*?<!-- \/kw:emergency-bar -->/,
+    '<!-- kw:emergency-bar -->\n    ' + PARTIALS.emergencyBar.replace(/\n/g, '\n    ') + '\n    <!-- /kw:emergency-bar -->');
+  html = html.replace(/<!-- kw:left-sidebar -->[\s\S]*?<!-- \/kw:left-sidebar -->/,
+    '<!-- kw:left-sidebar -->\n      ' + leftSidebar.replace(/\n/g, '\n      ') + '\n      <!-- /kw:left-sidebar -->');
   html = html.replace(/<main id="main">[\s\S]*?<\/main>/,
     '<main id="main">' + r.main + '</main>');
-  html = html.replace(/<aside class="right" id="rightNav">[\s\S]*?<\/aside>\s*(?:<\/aside>\s*)*<\/div>\s*<footer/,
-    '<aside class="right" id="rightNav">' + r.rightNav + '</aside>\n    </div>\n\n    <footer');
+  html = html.replace(/<!-- kw:right-sidebar -->[\s\S]*?<!-- \/kw:right-sidebar -->/,
+    '<!-- kw:right-sidebar -->\n      ' + rightSidebar.replace(/\n/g, '\n      ') + '\n      <!-- /kw:right-sidebar -->');
+  html = html.replace(/<!-- kw:footer -->[\s\S]*?<!-- \/kw:footer -->/,
+    '<!-- kw:footer -->\n    ' + PARTIALS.footer.replace(/\n/g, '\n    ') + '\n    <!-- /kw:footer -->');
   return html;
 }
 
@@ -168,9 +190,9 @@ function writeSitemap(routes) {
 }
 
 function run() {
-  const template = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+  const template = fs.readFileSync(path.join(ROOT, 'template.html'), 'utf8');
   if (!/<!-- kw:head -->/.test(template)) {
-    console.error('ERROR: index.html is missing the kw:head marker. Aborting.');
+    console.error('ERROR: template.html is missing the kw:head marker. Aborting.');
     process.exit(1);
   }
   const routes = allRoutes();
